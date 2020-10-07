@@ -1,0 +1,7 @@
+- breadcrumb :admin_user, @user
+%p#notice= notice
+%h3.display-3.text-center
+  = icon 'fas', 'user'
+  = t 'action.edit'
+  = @user
+= render 'form'

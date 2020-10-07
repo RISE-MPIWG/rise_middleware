@@ -1,0 +1,9 @@
+- breadcrumb :admin_organisations
+= datagrid_form_for @organisations_grid, url: admin_organisations_path
+- @total_count = @organisations_grid.assets.total_count
+.mb-2.clearfix
+  = t 'showing'
+  #{@total_count} #{Organisation.model_name.human(count: @total_count)}
+  = icon_link_to t('action.new', model: Organisation.model_name.human), new_admin_organisation_path, 'plus', class: 'float-right'
+= datagrid_table(@organisations_grid)
+= paginate @organisations_grid.assets, theme: 'twitter-bootstrap-4'

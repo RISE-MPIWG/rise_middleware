@@ -1,0 +1,13 @@
+= simple_form_for([:update_api_definition_file, :admin, @research_tool]) do |f|
+  = f.error_notification
+  .panel.panel-primary
+    .panel-heading
+      = t 'api_definition'
+    .panel-body
+      .inputs
+        = f.input :api_definition_file
+        - if @research_tool.api_definition_file.present?
+          = f.label :api_definition_file, label: t('current_api_definition_file'), class: 'margin-bottom-md'
+          = link_to File.basename(@research_tool.api_definition_file.path),[:download_api_definition_file, :admin, @research_tool], target: '_blank'
+  .actions
+    = f.button :button, type: :submit, class: 'btn-submit'

@@ -1,0 +1,16 @@
+A new message has been posted on the RISE Homepage:
+===============================================
+ 
+Name:
+<%= @contact.name %>
+
+Email:
+<%= @contact.email %>
+
+Message:
+
+<%= @contact.message %>
+
+Best Regards,
+
+The RISE Robot

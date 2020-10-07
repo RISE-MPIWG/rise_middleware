@@ -1,0 +1,15 @@
+.panel.panel-default.devise-bs
+  .panel-heading
+    %h4
+      = @resource
+      = link_to t('action.edit'), edit_resource_path(@resource), class: 'float-right'
+  .panel-body
+    %label= Resource.human_attribute_name :name
+    = @resource.name
+    %br
+    %label= Resource.human_attribute_name :uri
+    = @resource.uri
+    %br
+    %label= Organisation.model_name.human
+    = link_to @resource.collection.organisation, @resource.collection.organisation
+  %br

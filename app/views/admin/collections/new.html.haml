@@ -1,0 +1,7 @@
+- breadcrumb :admin_collection_new
+.panel.panel-default.devise-bs
+  .panel-heading
+    %h4
+      = t 'action.new', model: Collection.model_name.human
+  .panel-body
+    = render 'form'

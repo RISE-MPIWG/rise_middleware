@@ -1,0 +1,16 @@
+- breadcrumb :admin_collection_resources, @collection
+= render 'admin/collections/cartouche'
+= render 'admin/collections/tabs'
+= datagrid_form_for @resources_grid, url: admin_collection_resources_path
+%span.display-4.mb-2.clearfix
+  - @total_count = @resources_grid.assets.total_count
+  = t 'showing'
+  #{@total_count} #{Resource.model_name.human(count: @total_count)}
+  - if @collection.api_mapping_module
+    = icon_link_to t('action.refresh_index'), [:refresh_index, :admin, @collection, Resource], 'sync', class: 'float-right mb-2'
+= datagrid_table(@resources_grid)
+= paginate @resources_grid.assets, theme: 'twitter-bootstrap-4'
+:coffeescript
+  $('.pull-btn').each ->
+    $(this).click ->
+      $(this).siblings('.fa-circle-o-notch').fadeIn()

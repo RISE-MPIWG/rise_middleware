@@ -1,0 +1,36 @@
+.content__section--intro
+  .container-fluid
+    / <div class="jumbotron jumbotron-flush">
+    .row
+      .col-12
+        %h1.display-1 About
+      .col-12.col-lg-8
+        %p.lead
+          The RISE Project is developed by the <a href="https://www.mpiwg-berlin.mpg.de/">Max Planck Institute for the History of Science</a>, with the support of <a href="https://staatsbibliothek-berlin.de/">Staatsbibliothek zu Berlin</a>. To see all the project collaborators and learn how you can get involved, please visit the <a href="/pages/community">community page</a>.
+.content__section
+  .container-fluid
+    .row
+      .col-12.col-md-6
+        %h3 SHINE
+        %p
+          %a{:href => "/pages/doc_for_developers"} SHINE
+          is an API standard for exchanging textual resources, both open-access ones and protected (or licensed) ones that require authentication and authorization. Resource providers and research tool developers will find
+          %a{:href => "/pages/doc_for_developers"} SHINE
+          useful because it supports interoperability among resource repositories and research tools in a decentralized manner. Researchers will find
+          %a{:href => "/pages/doc_for_developers"} SHINE
+          useful because they will gain unprecedented access to textual resources in a machine-readable format, so that textual resources can be analyzed in research tools in a seamless and legal research workflow.
+      .col-12.col-md-6
+        %h3 RISE
+        %p
+          RISE is a middleware that protects resource exchanges via <a href="/pages/doc_for_developers">SHINE</a>. It authenticates and authorizes these exchanges, especially for protected (or licensed) resources. It also includes a browser-based administrative interface for resource providers, research tool developers, and research organizations to regulate protocols for specific resource exchanges. To access RISE, please <a href="/users/sign_up">sign up here</a>
+.content__section
+  .container-fluid
+    .row
+      .col-12
+        %h3 Toolkits
+      .col-12.col-lg-8
+        %p
+          To demonstrate the benefits of working with RISE and to encourage third-party development of
+          %a{:href => "/pages/doc_for_developers"} SHINE
+          = "-compatible technical solutions,"
+          a suite of open-source toolkits is available for others to adopt and adapt for their own purposes. They can be found on the RISE Project's <a href='https://github.com/RISE-MPIWG'>Github page</a>.

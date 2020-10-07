@@ -1,0 +1,8 @@
+= render 'admin/collections/cartouche'
+= simple_form_for([:admin, @organisation_collection], url: admin_collection_organisation_path(@collection, @organisation)) do |f|
+  = f.error_notification
+  = f.input :api_key
+  = f.input :access_right, include_blank: false
+
+  .actions
+    = f.button :button, 'Update', type: :submit, class: 'btn-submit'

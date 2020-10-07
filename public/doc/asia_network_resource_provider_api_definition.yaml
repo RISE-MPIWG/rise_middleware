@@ -1,0 +1,167 @@
+swagger: '2.0'
+info:
+  title: SHINE Resource Provider API 
+  version: v1
+  description: This is the minimum set of endpoints required by Rise to connect to a Resource Provider that wishes to make their catalog available through the Rise Service.
+  contact:
+    name: Pascal Belouin
+    email: pbelouin@mpiwg-berlin.mpg.de
+host: resource-provider-api-url
+schemes:
+  - https
+paths:
+  '/api/collections/{uuid}/resources':
+    get:
+      summary: Get the list of all resources for a collection
+      tags:
+        - Collections
+      produces:
+        - application/json
+      security:
+        - apiToken: []
+      parameters:
+        - name: uuid
+          in: path
+          type: string
+          description: The UUID of the Collection you wish to access
+          required: true
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/resource'
+        '401':
+          description: unauthorised access to this resource's collection
+        '404':
+          description: Collection not found
+  /api/collections:
+    get:
+      summary: Get the list of all collections the current user has access to
+      tags:
+        - Collections
+      produces:
+        - application/json
+      security:
+        - apiToken: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/collection'
+  '/api/resources/{uuid}/sections':
+    get:
+      summary: Get the list of all sections for a resource
+      tags:
+        - Resources
+      produces:
+        - application/json
+      security:
+        - apiToken: []
+      parameters:
+        - name: uuid
+          in: path
+          type: string
+          description: The UUID of the Resource you wish to access
+          required: true
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/section'
+        '401':
+          description: unauthorised access to this resource
+        '404':
+          description: resource not found
+  '/api/sections/{uuid}/content_units':
+    get:
+      summary: Get the list of all content units for a section
+      tags:
+        - Sections
+      produces:
+        - application/json
+      security:
+        - apiToken: []
+      parameters:
+        - name: uuid
+          in: path
+          type: string
+          description: The UUID of the section you wish to access
+          required: true
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/content_unit'
+        '401':
+          description: unauthorised access to this section
+        '404':
+          description: section not found
+  '/api/sections/{uuid}':
+    get:
+      summary: Retrieves a section
+      tags:
+        - Sections
+      produces:
+        - application/json
+      security:
+        - apiToken: []
+      parameters:
+        - name: uuid
+          in: path
+          type: string
+          description: The UUID of the Section you wish to access
+          required: true
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/section'
+        '401':
+          description: unauthorised access to this resource
+        '404':
+          description: resource not found
+securityDefinitions:
+  apiToken:
+    type: apiKey
+    in: header
+    name: RISE-API-TOKEN
+definitions:
+  collection:
+    type: object
+    properties:
+      uuid:
+        type: string
+      name:
+        type: string
+  resource:
+    type: object
+    properties:
+      uuid:
+        type: string
+      name:
+        type: string
+  section:
+    type: object
+    properties:
+      uuid:
+        type: string
+      title:
+        type: string
+      parentUuid:
+        type:
+          string
+  content_unit:
+    type: object
+    properties:
+      uuid:
+        type: string
+      contents:
+        type: string

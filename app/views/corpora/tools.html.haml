@@ -1,0 +1,18 @@
+- breadcrumb :corpus_tools, @corpus
+= render 'tabs'
+.container-fluid
+  .col-md-12
+    %h3.display-3= t 'full_text_search'      
+    = simple_form_for :tools, url: [:tools, @corpus]  do |f|
+      .form-group
+        = f.input_field :search_term, value: @search_term, class: 'form-control'
+      .form-group
+        = f.submit t('action.perform_search'), class: 'btn btn-primary btn-sm'
+        - if @search_hits
+          %h2 Results
+          %ul
+            - @search_hits.each do |search_hit|
+              %li
+                =  highlight(excerpt(search_hit.content, @search_term, radius: 50), @search_term)
+                |
+                = "#{view_link_to search_hit.section.resource}, #{search_hit.section.name}".html_safe

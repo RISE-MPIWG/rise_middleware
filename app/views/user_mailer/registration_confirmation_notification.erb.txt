@@ -1,0 +1,15 @@
+
+Dear <%= @email %>
+===============================================
+ 
+Your new RISE account is ready!
+Here are your credentials:
+username: <%= @email >
+temporary password: <%= @password %>
+
+Please change your temporary password as soon as possible.
+
+
+Best Regards,
+
+The Rise Robot

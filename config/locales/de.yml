@@ -1,0 +1,60 @@
+de:
+  front_end:
+    browser:
+      title: Durchsuchen Sie den Katalog
+      placeholder: Geben Sie einen Titel für die Suche ein
+    selections:
+      title: Ausgewählte Ressourcen
+      undertitle: Keine Artikel ausgewählt. Bitte wählen Sie Ressourcen aus dem Katalog.
+      open: Öffnen
+      selected_resources: ausgewählte Artikel mit
+    preview:
+      title: Vorschau
+      undertitle: Klicken Sie auf die ausgewählte Ressource, um die Vorschau zu laden.
+      placeholder: Geben Sie ein Wort für die Suche ein
+    permission:
+      message: Sie haben keine Berechtigung für die Vorschau. Bitte kontaktieren Sie uns, um  weitere Information zu erhalten.
+  help: Hilfe
+  edit_account: Mein Konto
+  general_information: Allgemeine Information
+  api_documentation: API-Dokumentation
+  search: Suche
+  sign_out: Ausloggen
+  welcome_to_rise: Willkommen bei Rise
+  use_search_field_below_to_browse_our_catalog: Bitte benutzen Sie das Suchfeld unten, um den Katalog zu durchsuchen
+  you_are_logged_in_as: Sie sind eingeloggen als
+  access: Zugriff
+  properties: Eigenschaften
+  actions: Aktionen
+  admin: Admin
+  owner: Eigentümer
+  showing: Anzeigen
+  are_you_sure: Sind sie sicher?
+  access_right: Zugangsberechtigung
+  audit_trail: Benutzeraktivität
+  change_my_password: Ändere mein Passwort
+  api_authentication: API-Authentifizierung
+  generate_a_new_token: Erzeugen Sie ein neues Token
+  api_key_use_explanation: 'Verwenden Sie Ihr API-Token, indem Sie einen Anforderungsheader wie folgt einrichten:'
+  current_api_definition_file: "Aktuelle API-Definitionsdatei:"
+  current_rise_api_token: "Ihr aktuelles Rise API Token:"
+  api_definition: API Definition
+  action:
+    remove: Entfernen
+    show: Anzeigen
+    edit: Bearbeiten
+    delete: Löschen
+    archive: Archivieren
+    new: "Neues %{model}"
+    add: "Hinzufügen %{model}"
+    manage_access: Zugriff verwalten
+    manage: Verwalten
+    managing: Verwaltend
+    download: Herunterladen
+  search_for_a: "Suche nach einem %{model}"
+  search_by: "Suche nach %{value}"
+  search: "Suche"
+  errors:
+    messages:
+      extension_whitelist_error: nur .yaml- und .yml-Erweiterungen sind erlaubt
+      invalid_api_definition_schema: Diese API-Definitionsdatei ist ungültig - Bitte stellen Sie sicher, dass Ihre Schemadefinition dem OpenAPI (Swagger) 2.0 Standard entspricht.

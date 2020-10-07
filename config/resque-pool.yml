@@ -1,0 +1,6 @@
+
+default: 15
+mailers: 5
+production:
+  default: 15
+  mailers: 5

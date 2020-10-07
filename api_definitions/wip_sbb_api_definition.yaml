@@ -1,0 +1,266 @@
+swagger: '2.0'
+info:
+  description: SBB Integrated Text Repository API
+  version: 0.0.1
+  title: SBB Integrated Text Repository API
+  contact:
+    email: pbelouin@mpiwg-berlin.mpg.de
+tags:
+  - name: page
+  - name: gazetteer
+  - name: section
+  - name: book
+schemes:
+  - http
+paths:
+  '/pages/{page_id}':
+    get:
+      tags:
+        - page
+      summary: Find page by ID
+      description: Returns a single page
+      operationId: getPageById
+      produces:
+        - application/json
+      parameters:
+        - name: page_id
+          in: path
+          description: ID of page to return
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Page'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Page not found
+      security:
+        - api_key: []
+  /pages/text_search:
+    get:
+      tags:
+        - page
+      summary: >-
+        Returns an array of pages based on full text search performed on their
+        content
+      description: Returns an array of pages
+      operationId: return pages based on a full text search in their content
+      produces:
+        - application/json
+      parameters:
+        - name: q
+          in: query
+          description: search terms
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation - empty array represents no results
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Page'
+      security:
+        - api_key: []
+  '/gazetteers/{gazetteer_id}/page_range':
+    get:
+      tags:
+        - gazetteer
+      summary: Get page range for a particular gazetteer
+      description: Returns a single page
+      operationId: getPagesForGazetteer
+      produces:
+        - application/json
+      parameters:
+        - name: gazetteer_id
+          in: path
+          description: ID of gazetteer
+          required: true
+          type: integer
+          format: int64
+        - name: first_page
+          in: query
+          description: first page of page range
+          required: true
+          type: integer
+          format: int64
+        - name: last_page
+          in: query
+          description: last page of page range
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Page'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Page not found
+      security:
+        - api_key: []
+  '/sections/{section_id}/pages':
+    get:
+      tags:
+        - section
+      summary: Return array of pages for a section
+      description: Returns the pages for a section
+      operationId: getPagesFromSection
+      produces:
+        - application/json
+      parameters:
+        - name: section_id
+          in: path
+          description: ID of section
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Page'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Page not found
+      security:
+        - api_key: []
+  /sections/title_search:
+    get:
+      tags:
+        - section
+      summary: Return array of sections based on search performed on their titles
+      description: Returns the pages for a section
+      operationId: return sections based on a search in their titles
+      produces:
+        - application/json
+      parameters:
+        - name: q
+          in: query
+          description: search terms
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation - empty array represents no results
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Section'
+      security:
+        - api_key: []
+  /books/metadata_search:
+    get:
+      tags:
+        - book
+      summary: Return list of books from metadata search
+      description: Return list of books from metadata search
+      operationId: return list of books from metadata search
+      produces:
+        - application/json
+      parameters:
+        - name: title
+          in: query
+          description: 'metadata_field: title'
+          type: string
+        - name: publisher
+          in: query
+          description: 'metadata_field: publisher'
+          type: string
+      responses:
+        '200':
+          description: successful operation - empty array represents no results
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Book'
+      security:
+        - api_key: []
+  '/books/{book_id}/sections':
+    get:
+      tags:
+        - book
+      summary: Return sections of book from book id
+      description: Returns a book's table of content
+      operationId: getBookTOCById
+      produces:
+        - application/json
+      parameters:
+        - name: book_id
+          in: path
+          description: ID of the book
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Section'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Page not found
+      security:
+        - api_key: []
+securityDefinitions:
+  api_key:
+    type: apiKey
+    name: api_key
+    in: header
+definitions:
+  Gazetteer:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+  Page:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      number:
+        type: integer
+        format: int64
+      section:
+        $ref: '#/definitions/Section'
+  Section:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      title:
+        type: string
+      book:
+        $ref: '#/definitions/Book'
+  Book:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+  ApiResponse:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      type:
+        type: string
+      message:
+        type: string

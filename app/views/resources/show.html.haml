@@ -1,0 +1,38 @@
+- if @corpus
+  - breadcrumb :corpus_resource, @corpus, @resource
+- else
+  - if @collection
+    - breadcrumb :admin_collection_resource, @collection, @resource
+  - else
+    - breadcrumb :resource, @resource
+
+.content__section--intro
+  .container-fluid
+    %h3.display-3
+      = icon 'fas', 'book'
+      = truncate(@resource.name, length: 70)
+      - if current_user
+        .float-right.corpus-button-container.ml-3
+          = display_corpus_button(@resource, current_user.corpora.first)
+    %h3.display-3
+      %div.tag-container
+        %span.badge.badge-secondary
+          = icon 'fas', 'books'
+          = @resource.collection
+        %span.badge.badge-secondary
+          = icon 'fas', 'university'
+          = @resource.collection.organisation.slug.humanize
+        = display_access_right_label_to(@resource)
+    //- if current_user
+    //  = simple_form_for([:edit_tags, @resource], id: 'edit_tags', remote: true) do |f|
+    //    = f.input :tag_list, input_html: {value: @resource.tags_from(current_user).join(','), data: {role: :tagsinput} },class: 'form-control', label: "#{t('my')} #{t('tags')}".html_safe
+    - if current_power.readable_resource?(@resource)
+      #vue-behaviour
+      = tag.div id: :app, data: {resource: @resource.to_json, metadata: @resource.cascading_metadata.to_json, research_tools: ResearchTool.active.to_json, instance_url: { url: root_url }, locales: Hash[I18n.locale, File.open("public/locales/#{I18n.locale}.json").read]  }
+
+
+:coffeescript
+  $ ->
+    $('#resource_tag_list').change ->
+      console.log $(this).tagsinput('items')
+      $(this).closest('form').trigger 'submit.rails'

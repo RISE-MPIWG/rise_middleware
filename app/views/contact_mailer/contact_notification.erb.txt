@@ -1,0 +1,9 @@
+
+Dear <%= @contact.name %>
+===============================================
+ 
+We have received your message, and will contact your shortly. Thank you very much!\n
+
+Best Regards,\n
+
+The RISE Team

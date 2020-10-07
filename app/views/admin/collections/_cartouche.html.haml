@@ -1,0 +1,12 @@
+%h3.display-3.text-center
+  = icon 'fas', 'books'
+  - if @organisation
+    = @organisation
+    = '-'
+    = t('access_to')
+  - unless @organisation
+    = t 'action.managing'
+  = @collection
+- if !@collection.mapping_module_set?
+  .alert.alert-warning
+    = t('errors.messages.no_api_mapping_module')

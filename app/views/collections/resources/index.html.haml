@@ -1,0 +1,23 @@
+= render 'admin/collections/tabs'
+.container-fluid
+  .col-12
+    .row
+      %table.table.table-striped
+        %thead
+          %tr
+            %th= Resource.human_attribute_name 'name'
+            %th= Resource.human_attribute_name 'uri'
+            %th.col-xs-1= t 'actions'
+      
+        %tbody
+          - @collection.resources.each do |resource|
+            %tr
+              %td= modal_link_to resource.name, resource
+              %td= link_to resource.uri, resource.uri, target: '_blank'
+              %td
+                - # TODO: setup power for removal of resource from collection
+                - if true
+                  = small_button_to t('action.remove'), [:admin, @collection, resource], 'times', method: :delete, data: { confirm: t('are_you_sure') }
+
+
+= icon_link_to t('action.add', model: Resource.model_name.human), new_admin_collection_resource_path(@collection), 'plus'

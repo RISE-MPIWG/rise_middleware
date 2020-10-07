@@ -1,0 +1,12 @@
+.container-fluid
+  .row
+    .col-12
+      %h3.display-3.text-center
+        = icon 'fas', 'wrench'
+        = t 'action.managing', model: ResearchTool.model_name.human
+        = @research_tool
+      %ul.nav.nav-pills.justify-content-center.mb-3
+        %li.nav-item
+          = active_link_to t('action.manage_access'), manage_access_admin_research_tool_path(@research_tool), class: 'nav-link'
+        %li.nav-item
+          = active_link_to t('properties'), edit_admin_research_tool_path(@research_tool), class: 'nav-link'

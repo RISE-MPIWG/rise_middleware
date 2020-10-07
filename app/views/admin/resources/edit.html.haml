@@ -1,0 +1,7 @@
+.panel.panel-default.devise-bs
+  .panel-heading
+    %h4
+      = t 'action.edit', model: Resource.model_name.human
+      = @resource
+  .panel-body
+    = render 'form'

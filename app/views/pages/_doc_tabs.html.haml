@@ -1,0 +1,76 @@
+.content__section--intro
+  .container-fluid
+    .row
+      .col-12
+        %h1.display-1= t 'documentation'
+      .col-12.col-lg-8
+        %p.lead
+          = t 'documentation_1'
+        %p.lead
+          = t 'toolkits_content.text_1'
+        %p.lead
+          To demonstrate the benefits of working with RISE and to encourage third-party development of
+          %a{:href => "/pages/doc_for_developers"} SHINE
+          = "-compatible technical solutions,"
+          a suite of open-source toolkits is available for others to adopt and adapt for their own purposes. They can be found on the RISE Project's <a href='https://github.com/RISE-MPIWG'>Github page</a>.
+          = t 'toolkits_content.bullet_1'
+          = t 'toolkits_content.bullet_2'
+          = t 'toolkits_content.bullet_3'
+    .row
+      .col-12.col-lg-8.mb-4
+        %h3
+          API Data Structure
+        = image_tag 'rise_resource_domain_model_hz.svg', class: 'img-fluid', alt: "The RISE domain model"
+        %p.lead.mt-4
+          The SHINE API structure is as follows: <strong>Resources</strong> (such as a book for example) belong to a <strong>Collection</strong>. Resources have <strong>Sections</strong>, which can have a parent or not. Sections are used to represent chapters and sub-chapters; If a section has no parent, it is considered a root section. Finally, <strong>Content Units</strong> are the units of text and belong to a section. <strong>Metadata</strong> can be stored and accessed against each object of the hierarchy to describe the language, rights and other attributes in the form of a JSON Object.
+        %p.lead
+          The SHINE API also provides endpoints for users to build their own collection of resources, which we call "<strong>Corpus</strong>". The mechanisms through which resources can be added or removed from a corpus are detailed in the OpenAPI documentation provided below. In addition, further endpoints are provided to get the list of <strong>Research Tools</strong> currently supported by the RISE Middleware instance, as well as for sign in and sign out. Please note that although we do support authentication using a <strong>RISE-API-TOKEN</strong> placed in the header, it is also possible to use the API With a valid RISE Session through the use of the <strong>XMLHttpRequest.withCredentials</strong> property.
+        %p.lead#tabs
+          Please find below the SHINE API documentation in the OpenAPI standard. If you are not familiar with this API definition standard, please refer to <a href='https://swagger.io/docs/specification/about/' target='_blank'>its documentation</a> for more information.
+    .row
+      .col-12.col-lg-8.mb-4
+        %h3#shine_metadata
+          Metadata Structure
+        %p.lead.mt-4
+          The SHINE Metadata structure consists of four different namespaces, allowing for the flexible representation of any type of metadata that can be associated with Collections, Resources, Sections and Content Units. A typical metadata object at the resource level would therefore look as follows:
+          %pre
+            :preserve
+              {
+                dublincore: {
+                  title: 'The Odyssey',
+                  date: '1932',
+                  creator: 'Homer',
+                  edition: 'Original Edition'
+
+                },
+                shine: {
+                  resource_type: 'book',
+                  section_type: 'page',
+                  content_unit_type: 'line'
+                },
+                extra: {
+                  anything: 'extra'
+                }
+              }
+          In addition, the RISE team strives to make its content JSON-LD compatible. Thus, an fourth additional <strong>@context</strong> namespace is automatically added to resources served by this RISE middleware instance, and looks as follows:
+          %pre
+            :preserve
+              @context: {
+                '@vocab' => 'https://rise.mpiwg-berlin.mpg.de/pages/doc_for_developers',
+                dublincore: 'http://dublincore.org/specifications/dublin-core/dcmi-terms/2012-06-14/?v=terms',
+                shine: 'https://rise.mpiwg-berlin.mpg.de/pages/doc_for_developers#shine_metadata'
+              }
+
+        %p.lead
+          The SHINE API also provides endpoints for users to build their own collection of resources, which we call "<strong>Corpus</strong>". The mechanisms through which resources can be added or removed from a corpus are detailed in the OpenAPI documentation provided below. In addition, further endpoints are provided to get the list of <strong>Research Tools</strong> currently supported by the RISE Middleware instance, as well as for sign in and sign out. Please note that although we do support authentication using a <strong>RISE-API-TOKEN</strong> placed in the header, it is also possible to use the API With a valid RISE Session through the use of the <strong>XMLHttpRequest.withCredentials</strong> property.
+        %p.lead#tabs
+          Please find below the SHINE API documentation in the OpenAPI standard. If you are not familiar with this API definition standard, please refer to <a href='https://swagger.io/docs/specification/about/' target='_blank'>its documentation</a> for more information.
+
+    .row
+      .col-12
+        %ul.nav.nav-pills.justify-content-center
+          %li.nav-item
+            = active_link_to t('for_research_tool_developers'), doc_for_developers_pages_path(anchor: :tabs), class: 'nav-link', data: { turbolinks: false }
+          %li.nav-item
+            = active_link_to t('for_resource_providers'), doc_for_resource_providers_pages_path(anchor: :tabs), class: 'nav-link', data: { turbolinks: false }
+    .clearfix.mb-4

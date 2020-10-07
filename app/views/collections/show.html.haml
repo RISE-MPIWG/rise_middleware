@@ -1,0 +1,19 @@
+.modal-header
+  %h4.modal-title.display-3
+    = icon 'fas', 'books'
+    = @collection
+  %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+    %span{"aria-hidden" => "true"} ×
+.modal-body
+  %ul.list-unstyled.lead
+    %li
+      = icon 'fas', 'university'
+      = @collection.organisation
+    %li
+      = icon 'fas', 'books'
+      = @collection.resource_count 
+      = Resource.model_name.human(count: 2)
+    - if current_user
+      %li
+        = "#{OrganisationCollection.human_attribute_name(:access_right)}:"
+        = display_access_right_to(@collection)

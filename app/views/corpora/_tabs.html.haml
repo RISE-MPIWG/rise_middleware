@@ -1,0 +1,9 @@
+.container-fluid
+  .col-md-12
+    %ul.nav.nav-pills.justify-content-center.mb-3
+      %li.nav-item
+        = active_link_to (Resource.model_name.human(count: 2) + " (<span id='total_overview'>#{@corpus.resources.count}</span>)".html_safe).html_safe, corpus_resources_path(@corpus), class: 'nav-link'
+      %li.nav-item
+        = active_link_to 'Full Text Search', [:tools, @corpus], class: 'nav-link'
+      /%li.nav-item
+      /  = active_link_to t('properties'), edit_corpus_path(@corpus), class: 'nav-link'

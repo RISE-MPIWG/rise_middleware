@@ -1,0 +1,1588 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "SHINE API",
+    "version": "v1",
+    "description": "The SHINE API allows access to various resources made available by resource providers such as Stadt Bibliotek Berlin or the Chinese Text Project.",
+    "contact": {
+      "name": "Pascal Belouin",
+      "email": "pbelouin@mpiwg-berlin.mpg.de"
+    }
+  },
+  "tags": [
+    {
+      "name": "Collections",
+      "description": "Collection Routes"
+    },
+    {
+      "name": "Resources",
+      "description": "Resource Routes"
+    },
+    {
+      "name": "Sections",
+      "description": "Section Routes"
+    },
+    {
+      "name": "Content Units",
+      "description": "Content Unit Routes"
+    },
+    {
+      "name": "Corpora",
+      "description": "Corpus Routes"
+    },
+    {
+      "name": "ResearchTools",
+      "description": "Research Tool Routes"
+    },
+    {
+      "name": "ToolExports",
+      "description": "Tool Export Routes"
+    },
+    {
+      "name": "Sessions",
+      "description": "Authentication Routes"
+    }
+  ],
+  "host": "rise.mpiwg-berlin.mpg.de",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/api/collections/{uuid}/resources": {
+      "get": {
+        "summary": "Get the list of all resources for a collection for an unauthenticated user",
+        "tags": [
+          "Collections"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "type": "string",
+            "description": "The UUID of the Collection you wish to access",
+            "required": true
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "type": "integer",
+            "description": "The page required",
+            "required": false
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "type": "integer",
+            "description": "The required number of results per page",
+            "required": false
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "type": "string",
+            "description": "a string to filter the returned resources by name",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/resource"
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "uuid": "068e44b5-fc8d-438a-8148-1fec06008b1c",
+                  "name": "Berlin Alexanderplatz",
+                  "id": 467
+                },
+                {
+                  "uuid": "daa57bcc-d42b-41e8-9f29-a7ed81423e15",
+                  "name": "Deutschland. Ein Wintermärchen",
+                  "id": 468
+                }
+              ]
+            }
+          },
+          "401": {
+            "description": "unauthorised access to this resource's collection"
+          },
+          "404": {
+            "description": "Collection not found"
+          }
+        }
+      }
+    },
+    "/api/collections": {
+      "get": {
+        "summary": "Get the list of all collections an unauthenticated user has access to",
+        "tags": [
+          "Collections"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "type": "integer",
+            "description": "The page required",
+            "required": false
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "type": "integer",
+            "description": "The required number of results per page",
+            "required": false
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "type": "string",
+            "description": "a string to filter the returned collections by name",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/collection"
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "uuid": "db026581-ca6b-4608-be34-31c66496ea2f",
+                  "name": "The Moving Toyshop",
+                  "resourceCount": 0
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/api/collections/{uuid}": {
+      "get": {
+        "summary": "Retrieves a collection",
+        "tags": [
+          "Collections"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "type": "string",
+            "description": "The UUID of the Collection you wish to access",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/collection"
+            },
+            "examples": {
+              "application/json": {
+                "uuid": "671ad26f-1b81-42a4-a09b-085c967c7e88",
+                "name": "In a Dry Season",
+                "resourceCount": 0
+              }
+            }
+          },
+          "404": {
+            "description": "resource not found"
+          },
+          "401": {
+            "description": "no access to this collection"
+          }
+        }
+      }
+    },
+    "/api/collections/{uuid}/research_tools": {
+      "get": {
+        "summary": "Lists the research tools accessible to a collection",
+        "tags": [
+          "Collections"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "type": "string",
+            "description": "The UUID of the Collection you wish to access",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/research_tool"
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "uuid": "32ea149c-620a-4f1a-83ab-7e89af5f04d2",
+                  "name": "Voyant Tools",
+                  "description": "Swarthy cyclopean indescribable tentacles.",
+                  "url": "http://priceleffler.info/dewitt"
+                },
+                {
+                  "uuid": "eb9afa3c-dfb7-47a9-a0b7-2f9636cdb1e6",
+                  "name": "Voyant Tools",
+                  "description": "Cat ululate daemoniac fainted.",
+                  "url": "http://witting.org/lottie"
+                }
+              ]
+            }
+          },
+          "404": {
+            "description": "resource not found"
+          },
+          "401": {
+            "description": "no access to this collection"
+          }
+        }
+      }
+    },
+    "/api/content_units/{uuid}": {
+      "get": {
+        "summary": "Retrieves a content unit for an unauthenticated user",
+        "tags": [
+          "Content Units"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "type": "string",
+            "description": "The UUID of the Content Unit you wish to access",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/content_unit"
+            },
+            "examples": {
+              "application/json": {
+                "uuid": "93373683-d7fd-4845-8518-68c0bbcb66fa",
+                "name": "Look Homeward, Angel",
+                "content": "別集類三{{宋}}提要"
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorised access to this content unit"
+          },
+          "404": {
+            "description": "content unit not found"
+          }
+        }
+      }
+    },
+    "/api/content_units/{uuid}/metadata": {
+      "get": {
+        "summary": "Returns a json object containing a content unit's metadata",
+        "tags": [
+          "Content Units"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "type": "string",
+            "description": "The UUID of the Content Unit you wish to access",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/metadata"
+            },
+            "examples": {
+              "application/json": {
+                "author": "Diogenes",
+                "language": "grc",
+                "section_level_field": "section",
+                "content_unit_level_field": "content unit"
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorised access to this content unit"
+          },
+          "404": {
+            "description": "content unit not found"
+          }
+        }
+      }
+    },
+    "/api/corpora/{uuid}/resources": {
+      "get": {
+        "summary": "Get the list of all corpora",
+        "tags": [
+          "Corpora"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "type": "string",
+            "description": "The UUID of the Corpus you wish to access",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "unauthorised access to the corpora"
+          },
+          "404": {
+            "description": "Corpus not found"
+          }
+        }
+      }
+    },
+    "/api/corpora": {
+      "get": {
+        "summary": "Get the list of all corpora the current user has access to",
+        "tags": [
+          "Corpora"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/corpus"
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "uuid": "78be4d46-4ae7-46c4-a965-c923b47bc832",
+                  "name": "My Corpus",
+                  "description": null
+                },
+                {
+                  "uuid": "859673f2-7fd7-4637-a768-4a7e6d8c43d5",
+                  "name": "Now Sleeps the Crimson Petal",
+                  "description": null
+                },
+                {
+                  "uuid": "296ede76-5db4-4048-8504-2c959358bcfc",
+                  "name": "Mr Standfast",
+                  "description": null
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/api/corpora/{uuid}": {
+      "get": {
+        "summary": "Retrieves a corpus",
+        "tags": [
+          "Corpora"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "type": "string",
+            "description": "The UUID of the Corpus you wish to access",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/corpus"
+            },
+            "examples": {
+              "application/json": {
+                "uuid": "d2014e03-7182-4e28-9890-56a19961cfca",
+                "name": "To Sail Beyond the Sunset",
+                "description": null
+              }
+            }
+          },
+          "404": {
+            "description": "resource not found"
+          },
+          "401": {
+            "description": "no access to this corpus"
+          }
+        }
+      }
+    },
+    "/api/research_tools": {
+      "get": {
+        "summary": "Get the list of all research tools the current user has access to",
+        "tags": [
+          "ResearchTools"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/research_tool"
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "uuid": "a9efd932-78a8-45a9-ab8d-e401c052db8e",
+                  "name": "Voyant Tools",
+                  "description": "Indescribable unnamable squamous mortal foetid non-euclidean.",
+                  "url": "http://witting.biz/mark_bauch"
+                },
+                {
+                  "uuid": "0f415208-33ad-4b8d-9ce4-ecf1c4f08b0b",
+                  "name": "Voyant Tools",
+                  "description": "Accursed antiquarian tenebrous fainted unmentionable non-euclidean.",
+                  "url": "http://lindgren.io/fernando_bauch"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/api/research_tools/{uuid}": {
+      "get": {
+        "summary": "Retrieves a research_tool",
+        "tags": [
+          "ResearchTools"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "type": "string",
+            "description": "The UUID of the Research Tool you wish to access",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/research_tool"
+            },
+            "examples": {
+              "application/json": {
+                "uuid": "64a1fc53-44f2-4856-995a-7ebe91d95b33",
+                "name": "Voyant Tools",
+                "description": "Spectral decadent indescribable tenebrous.",
+                "url": "http://smith.com/emmitt"
+              }
+            }
+          },
+          "404": {
+            "description": "research tool not found"
+          }
+        }
+      }
+    },
+    "/api/research_tools/{uuid}/sections_import_url": {
+      "post": {
+        "summary": "Generates a research tool import url for the sections uuids provided as parameters. Original (resource provider) uuids conforming to the AN standard can also be provided",
+        "tags": [
+          "ResearchTools"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "type": "string",
+            "description": "The UUID of the Research Tool you wish to use",
+            "required": true
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/research_tool_url_generation_params"
+            },
+            "description": "The data required to generate a valid research tool url to fetch an array of sections from Rise",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json": {
+                "url": "http://rohanreichert.co/manuel?instance_url=http://www.example.com/&section_uuids=516c3e15-ad71-4e5b-9f12-4f8132c0f22f,e09d1503-8644-42a2-b75d-da45a605cf90,83553761-c7ef-4006-984e-66080a4b6058,2d9e439b-934a-40fb-b4c0-bdd5a625a3eb,9db9b435-26ec-4549-a12a-625afe6ceb56,dfc12980-313a-485c-9af0-688bfc509886,4c1838b8-50c5-444f-b551-b6add8997524,fb09474f-13b8-4232-8474-5265462d84f6"
+              }
+            }
+          },
+          "404": {
+            "description": "research tool not found"
+          }
+        }
+      }
+    },
+    "/api/resources/{uuid}/sections": {
+      "get": {
+        "summary": "Get the list of all sections for a resource",
+        "tags": [
+          "Resources"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "type": "string",
+            "description": "The UUID of the Resource you wish to access",
+            "required": true
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "type": "integer",
+            "description": "The page required",
+            "required": false
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "type": "integer",
+            "description": "The required number of results per page",
+            "required": false
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "type": "string",
+            "description": "a string to filter the returned sections by title",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/section"
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "uuid": "db1fb726-4075-4606-a7d8-27e2543c4e74",
+                  "name": "Of Mice and Men",
+                  "parentUuid": null,
+                  "uri": "http://torp.io/latonya_thiel",
+                  "contentUnitCount": null
+                },
+                {
+                  "uuid": "5322caeb-c0bc-49e0-ba0e-35f0baab99a1",
+                  "name": "A Confederacy of Dunces",
+                  "parentUuid": null,
+                  "uri": "http://howell.net/dwain.mosciski",
+                  "contentUnitCount": null
+                },
+                {
+                  "uuid": "73e6d3b5-9dc6-49fa-b0a1-933e848336cc",
+                  "name": "To a God Unknown",
+                  "parentUuid": null,
+                  "uri": "http://miller.net/jennifer",
+                  "contentUnitCount": null
+                },
+                {
+                  "uuid": "6bdbeb7f-5210-4ef8-bd4c-cd26b74606d7",
+                  "name": "Look Homeward, Angel",
+                  "parentUuid": null,
+                  "uri": "http://kerluke.com/harris",
+                  "contentUnitCount": null
+                },
+                {
+                  "uuid": "fd625c8d-4059-4cd8-a25a-e587179bef3c",
+                  "name": "Surprised by Joy",
+                  "parentUuid": null,
+                  "uri": "http://hansen.info/benny",
+                  "contentUnitCount": null
+                },
+                {
+                  "uuid": "a175b2b6-0773-4c7e-bb8f-2903beb5a719",
+                  "name": "All the King's Men",
+                  "parentUuid": null,
+                  "uri": "http://kaulke.net/garfield",
+                  "contentUnitCount": null
+                }
+              ]
+            }
+          },
+          "401": {
+            "description": "unauthorised access to this resource"
+          },
+          "404": {
+            "description": "resource not found"
+          }
+        }
+      }
+    },
+    "/api/resources": {
+      "get": {
+        "summary": "Get the list of all resources available to an unauthenticated user",
+        "tags": [
+          "Resources"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "type": "integer",
+            "description": "The page required",
+            "required": false
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "type": "integer",
+            "description": "The required number of results per page",
+            "required": false
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "type": "string",
+            "description": "a string to filter the returned resources by name",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/resource_for_index"
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "uuid": "448ab8c2-22cc-4618-9150-c5963d77bc3e",
+                  "name": "Der (kleine) Schatz im Kugelbauch",
+                  "collectionUuid": "cddcd5bc-a18f-4d9a-873a-dc357d4c6e88",
+                  "uri": "http://schoen.org/ken_schowalter"
+                },
+                {
+                  "uuid": "721b50cc-0257-4995-86fa-83570c189711",
+                  "name": "Der Steppenwolf",
+                  "collectionUuid": "cddcd5bc-a18f-4d9a-873a-dc357d4c6e88",
+                  "uri": "http://goodwin.co/arron"
+                },
+                {
+                  "uuid": "94c25085-637b-4f03-9ef6-3eecde1a1984",
+                  "name": "Die Physiker",
+                  "collectionUuid": "cddcd5bc-a18f-4d9a-873a-dc357d4c6e88",
+                  "uri": "http://senger.co/geoffrey"
+                },
+                {
+                  "uuid": "73e69a0d-598d-4f61-b6b5-c989ca0d68b8",
+                  "name": "Franziska Linkerhand",
+                  "collectionUuid": "cddcd5bc-a18f-4d9a-873a-dc357d4c6e88",
+                  "uri": "http://koelpin.com/burl.ward"
+                },
+                {
+                  "uuid": "3fc67588-1041-42a9-ad39-69ad10b7a069",
+                  "name": "Iphigenie auf Tauris",
+                  "collectionUuid": "cddcd5bc-a18f-4d9a-873a-dc357d4c6e88",
+                  "uri": "http://mante.biz/howard_breitenberg"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/api/resources/{uuid}": {
+      "get": {
+        "summary": "Retrieves a resource",
+        "tags": [
+          "Resources"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "type": "string",
+            "description": "The UUID of the Resource you wish to access",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/resource"
+            },
+            "examples": {
+              "application/json": {
+                "uuid": "783d1b29-21c8-4e32-b42a-44c806b951ee",
+                "name": "The Line of Beauty",
+                "collectionUuid": "6386741d-654e-4b79-bc08-524590314f9a",
+                "uri": "http://wisozkterry.com/bradly_pfeffer",
+                "sections": [
+
+                ]
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorised access to this resource"
+          },
+          "404": {
+            "description": "resource not found"
+          }
+        }
+      }
+    },
+    "/api/resources/{uuid}/metadata": {
+      "get": {
+        "summary": "Returns a json object containing a resource's metadata",
+        "tags": [
+          "Resources"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "type": "string",
+            "description": "The UUID of the Resource you wish to access",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/metadata"
+            },
+            "examples": {
+              "application/json": {
+                "author": "Diogenes",
+                "language": "grc",
+                "resource_level_field": "resource"
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorised access to this resource"
+          },
+          "404": {
+            "description": "resource not found"
+          }
+        }
+      }
+    },
+    "/api/rp_services/register_instance": {
+      "post": {
+        "summary": "called by rps to get registered by this middleware instance",
+        "tags": [
+          "Register RP"
+        ],
+        "parameters": [
+          {
+            "name": "HTTP_REFERER",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "description": "The referer header, used to identify the tool from which this call originates from"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/metadata_from_rp_instance"
+            },
+            "description": "The data sent by the RP to the middleware instance",
+            "required": true
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "schema": {
+                "uuid": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/sections/{uuid}/content_units": {
+      "get": {
+        "summary": "Get the list of all content units for a section",
+        "tags": [
+          "Sections"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "type": "string",
+            "description": "The UUID of the section you wish to access",
+            "required": true
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "type": "integer",
+            "description": "The page required",
+            "required": false
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "type": "integer",
+            "description": "The required number of results per page",
+            "required": false
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "type": "string",
+            "description": "a string to filter the returned content units by title or contents",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/content_unit"
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "uuid": "139aa8ed-7bf8-44a6-a8df-444bf2f5e586",
+                  "name": "Where Angels Fear to Tread",
+                  "content": "別集類三{{宋}}提要"
+                },
+                {
+                  "uuid": "96c36b52-611a-4850-a4fd-82a4f06bcd03",
+                  "name": "Paths of Glory",
+                  "content": "別集類三{{宋}}提要"
+                },
+                {
+                  "uuid": "90fb36f2-0160-4ed6-a56c-9c82a8c7b8ca",
+                  "name": "Noli Me Tangere",
+                  "content": "別集類三{{宋}}提要"
+                },
+                {
+                  "uuid": "31c6f806-9a09-45d2-878e-d4ed09afcb6e",
+                  "name": "Have His Carcase",
+                  "content": "別集類三{{宋}}提要"
+                },
+                {
+                  "uuid": "f3087fd0-a728-4202-b552-de1776cad272",
+                  "name": "Beneath the Bleeding",
+                  "content": "別集類三{{宋}}提要"
+                },
+                {
+                  "uuid": "b61643a7-6ae8-492c-bb70-1775f29dd5d2",
+                  "name": "Consider the Lilies",
+                  "content": "別集類三{{宋}}提要"
+                }
+              ]
+            }
+          },
+          "401": {
+            "description": "unauthorised access to this section"
+          },
+          "404": {
+            "description": "section not found"
+          }
+        }
+      }
+    },
+    "/api/sections/{uuid}": {
+      "get": {
+        "summary": "Retrieves a section for an unauthenticated user",
+        "tags": [
+          "Sections"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "type": "string",
+            "description": "The UUID of the Section you wish to access",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/section"
+            },
+            "examples": {
+              "application/json": {
+                "uuid": "5335df64-5aff-44e6-b04a-0b6441b2b5d2",
+                "name": "Recalled to Life",
+                "parentUuid": null,
+                "uri": "http://price.co/eldridge",
+                "contentUnitCount": 2
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorised access to this section"
+          },
+          "404": {
+            "description": "resource not found"
+          }
+        }
+      }
+    },
+    "/api/sections/{uuid}/metadata": {
+      "get": {
+        "summary": "Returns a json object containing a section's metadata",
+        "tags": [
+          "Sections"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "type": "string",
+            "description": "The UUID of the Section you wish to access",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/metadata"
+            },
+            "examples": {
+              "application/json": {
+                "author": "Plato",
+                "language": "lat",
+                "section_level_field": "section"
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorised access to this section"
+          },
+          "404": {
+            "description": "resource not found"
+          }
+        }
+      }
+    },
+    "/api/sign_in": {
+      "post": {
+        "summary": "Sign In",
+        "tags": [
+          "Sessions"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "credentials",
+            "in": "body",
+            "description": "The credentials of the user",
+            "schema": {
+              "$ref": "#/definitions/user_credentials"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully logged in",
+            "schema": {
+              "$ref": "#/definitions/sign_in_response"
+            }
+          },
+          "401": {
+            "description": "Unauthorized access - wrong credentials"
+          }
+        }
+      }
+    },
+    "/api/sign_out": {
+      "delete": {
+        "summary": "Sign Out",
+        "tags": [
+          "Sessions"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully logged out"
+          },
+          "401": {
+            "description": "Unauthorized access - wrong credentials"
+          }
+        }
+      }
+    },
+    "/api/tool_exports": {
+      "get": {
+        "summary": "Get the list of all tool exports the current user has access to",
+        "tags": [
+          "ToolExports"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/tool_export"
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "uuid": "576d3ab9-a0d9-4b5e-b0dd-32f926801ff3",
+                  "name": "Waiting for the Barbarians",
+                  "notes": "Manuscript ululate swarthy blasphemous unmentionable squamous tenebrous cyclopean comprehension.",
+                  "fileUrl": null
+                },
+                {
+                  "uuid": "629a58ee-d174-4b82-933c-319a6bd14b69",
+                  "name": "I Sing the Body Electric",
+                  "notes": "Furtive unutterable eldritch lurk iridescence effulgence.",
+                  "fileUrl": null
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/api/tool_exports/{uuid}": {
+      "get": {
+        "summary": "Retrieves a tool_export",
+        "tags": [
+          "ToolExports"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "type": "string",
+            "description": "The UUID of the Tool Export you wish to access",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/tool_export"
+            },
+            "examples": {
+              "application/json": {
+                "uuid": "099987d0-7588-4b1c-8f1a-b04e9e4c93c2",
+                "name": "The Parliament of Man",
+                "notes": "Unmentionable foetid noisome lurk gibbous.",
+                "fileUrl": null
+              }
+            }
+          },
+          "404": {
+            "description": "resource not found"
+          },
+          "401": {
+            "description": "no access to this tool export"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "apiToken": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "RISE-API-TOKEN"
+    }
+  },
+  "definitions": {
+    "response": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "collection": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "resource": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "description": "the Rise unique identifier for this resource"
+        },
+        "name": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string",
+          "description": "the original uri from which the resource can be fetched"
+        }
+      }
+    },
+    "resource_for_index": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "collection_uuid": {
+          "type": "string"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "author": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        }
+      }
+    },
+    "section": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "description": "the Rise unique identifier for this section"
+        },
+        "name": {
+          "type": "string"
+        },
+        "parentUuid": {
+          "type": "string",
+          "x-nullable": true
+        },
+        "uri": {
+          "type": "string",
+          "description": "the original uri from which the section can be fetched"
+        }
+      }
+    },
+    "content_unit": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "contents": {
+          "type": "string"
+        }
+      }
+    },
+    "corpus": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "research_tool": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    },
+    "tool_export": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "file_url": {
+          "type": "string"
+        }
+      }
+    },
+    "research_tool_url_generation_params": {
+      "type": "object",
+      "properties": {
+        "section_uuids": {
+          "type": "array",
+          "description": "Rise section uuids",
+          "items": {
+            "type": "string"
+          }
+        },
+        "original_section_uuids": {
+          "type": "array",
+          "description": "Original section uuids, as stored by the resource provider",
+          "items": {
+            "type": "string"
+          }
+        },
+        "original_resource_uuid": {
+          "type": "string",
+          "description": "Original resource uuid, needed when providing original_section_uuids in case the required sections have not been indexed yet by Rise"
+        }
+      }
+    },
+    "metadata_for_tool_export_upload": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "file_data_uri": {
+          "type": "string"
+        },
+        "section_uuids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "metadata_from_rp_instance": {
+      "type": "object",
+      "properties": {
+      }
+    },
+    "user_for_sign_in": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "sign_in_response": {
+      "type": "object",
+      "properties": {
+        "auth_token": {
+          "type": "string"
+        }
+      }
+    },
+    "user_credentials": {
+      "type": "object",
+      "properties": {
+        "user": {
+          "$ref": "#/definitions/user_for_sign_in"
+        }
+      }
+    }
+  }
+}

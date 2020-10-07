@@ -1,0 +1,11 @@
+- breadcrumb :admin_research_tools
+= datagrid_form_for @research_tools_grid, url: admin_research_tools_path
+- @total_count = @research_tools_grid.assets.total_count
+.mb-2.clearfix
+  = t 'showing'
+  #{@total_count} #{ResearchTool.model_name.human(count: @total_count)}
+  - if current_power.super_admin?
+    = icon_link_to t('action.new', model: ResearchTool.model_name.human), new_admin_research_tool_path, 'plus', class: 'float-right'
+= datagrid_table(@research_tools_grid)
+= paginate @research_tools_grid.assets, theme: 'twitter-bootstrap-4'
+

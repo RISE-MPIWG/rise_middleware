@@ -1,0 +1,8 @@
+.modal-header-info
+  %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+    %span{"aria-hidden" => "true"} ×
+  %h4.modal-title
+    = icon 'fas', 'wrench'
+    = ToolExport.model_name.human
+    = @tool_export
+.modal-body

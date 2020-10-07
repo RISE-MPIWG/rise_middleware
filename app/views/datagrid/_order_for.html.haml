@@ -1,0 +1,8 @@
+.order.float-right
+  - if grid.order == column.name
+    - if grid.descending
+      = link_to(icon('fas', 'sort-up'), url_for(grid.param_name => grid.as_query.merge(:order => column.name, :descending => false)), class: 'asc')
+    - else                                                                             
+      = link_to(icon('fas', 'sort-down'), url_for(grid.param_name => grid.as_query.merge(:order => column.name, :descending => true )), class: 'desc')
+  - else
+    = link_to(icon('fas', 'sort'), url_for(grid.param_name => grid.as_query.merge(:order => column.name, :descending => false)), class: 'asc')

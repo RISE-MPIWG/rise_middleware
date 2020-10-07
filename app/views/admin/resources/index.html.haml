@@ -1,0 +1,14 @@
+= datagrid_form_for @resources_grid, url: admin_resources_path
+- @total_count = @resources_grid.assets.total_count
+.well.well-sm
+  = t 'showing'
+  #{@total_count} #{Resource.model_name.human(count: @total_count)}
+  = icon_link_to t('action.new', model: Resource.model_name.human), new_admin_resource_path, 'plus', class: 'float-right'
+= datagrid_table(@resources_grid)
+= paginate @resources_grid.assets, theme: 'twitter-bootstrap-4'
+
+
+:coffeescript
+  $('select').each ->
+    $(this).change ->
+      $(this).closest('form').trigger 'submit.rails'

@@ -1,0 +1,3 @@
+$("#add-to-corpus-#{@resource.id}").html('<i class="far fa-star">');
+$("#add-to-corpus-#{@resource.id}").attr('href',"#{url_for([:add, @corpus, @resource])}");
+toastr.info("#{@resource} #{I18n.t('removed_from_your_corpus')}");

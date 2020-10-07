@@ -1,0 +1,8 @@
+- breadcrumb :admin_user_logs
+= datagrid_form_for @user_logs_grid, url: admin_user_logs_path
+- @total_count = @user_logs_grid.assets.total_count
+%span.display-4.mb-2.clearfix
+  = t 'showing'
+  #{@total_count} #{UserLog.model_name.human(count: @total_count)}
+= datagrid_table(@user_logs_grid)
+= paginate @user_logs_grid.assets, theme: 'twitter-bootstrap-4'

@@ -1,0 +1,28 @@
+= search_form_for @q do |f|
+  = f.search_field :name_or_slug_cont, class: 'form-control margin-bottom-sm', placeholder: t('search_for_a', model: Organisation.model_name.human)
+%table.table.table-striped
+  %thead
+    %tr
+      %th= Organisation.human_attribute_name 'name'
+      %th= Organisation.human_attribute_name 'slug'
+      %th= Organisation.human_attribute_name 'saml_issuer_uri'
+      %th.col-md-1= t 'actions'
+
+  %tbody
+    - @organisations.each do |organisation|
+      %tr
+        %td= modal_link_to organisation.name, organisation
+        %td= organisation.slug
+        %td= organisation.saml_issuer_uri
+        %td
+          .btn-group-vertical.btn-block
+            - if current_power.updatable_organisation?(organisation)
+              = link_to edit_organisation_path(organisation), class: 'button btn btn-xs btn-default' do
+                = icon 'fas', 'edit'
+                = t('action.edit')
+            - if current_power.destroyable_organisation?(organisation)
+              = link_to organisation, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button btn btn-default btn-xs' do
+                = icon 'fas', 'archive'
+                = t('action.archive')
+
+= icon_link_to t('action.new', model: Organisation.model_name.human), new_admin_organisation_path, 'plus'

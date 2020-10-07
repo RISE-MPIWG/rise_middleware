@@ -1,0 +1,7 @@
+ make sure to highlight navbar when on doc
+
+
+
+ COMUNITIY:
+ add appropriate links
+

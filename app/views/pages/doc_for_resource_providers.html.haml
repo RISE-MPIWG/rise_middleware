@@ -1,0 +1,5 @@
+- breadcrumb :doc_for_resource_providers
+= render 'pages/doc_tabs'
+.container-fluid
+  %p= t 'resource_provider_help_text'
+  %iframe#swagger.swagger{ src: 'https://rise.mpiwg-berlin.mpg.de/swagger-rp/'}

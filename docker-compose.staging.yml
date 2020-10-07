@@ -1,0 +1,92 @@
+version: '3.6'
+
+services:
+
+  nginx:
+    restart: always
+    build: ./docker_containers/staging/nginx
+    image: rise/nginx_staging:latest
+    links:
+      - web:web
+    ports:
+      - "443:443"
+    volumes:
+      - rails-assets:/rise/public/assets
+      - rails-packs:/rise/public/packs
+      - rails-uploads:/rise/uploads
+    depends_on:
+      - web
+
+  postgres:
+    restart: always
+    image: 'postgres'
+    environment:
+      POSTGRES_USER: 'rise'
+      POSTGRES_PASSWORD: 'risepassword'
+    volumes:
+      - 'postgres:/var/lib/postgresql/data'
+
+  redis:
+    restart: always
+    image: 'redis:3.2-alpine'
+    command: redis-server
+    volumes:
+      - 'redis:/var/lib/redis/data'
+  web:
+    restart: always
+    depends_on:
+      - 'postgres'
+      - 'redis'
+    build: 
+      context: .
+      dockerfile: Dockerfile-production
+    image: rise/web:latest
+    env_file:
+      - '.production.env'
+    volumes:
+      - rails-assets:/rise/public/assets
+      - rails-packs:/rise/public/packs
+      - ~/.bash_history:/root/.bash_history
+    command: puma -C ./config/puma.rb
+    deploy:
+      replicas: 2
+
+  sidekiq:
+    restart: always
+    image: rise/web:latest
+    depends_on:
+      - 'postgres'
+      - 'redis'
+    env_file:
+      - '.production.env'
+    command: bundle exec sidekiq
+  scheduler:
+    image: rise/web:latest
+    env_file: .env
+    command: clockwork config/clock.rb
+    depends_on:
+      - postgres
+      - sidekiq
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    ports: 
+      - '8080:8080'
+    environment:
+      API_URL: 'https://staging.rise.mpiwg-berlin.mpg.de/api-docs/v1/swagger.json'
+
+  swagger-ui-rp:
+    image: swaggerapi/swagger-ui
+    ports: 
+      - '591:591'
+    environment:
+      API_URL: 'https://staging.rise.mpiwg-berlin.mpg.de/api-docs/v1/for_resource_providers.json'
+      PORT: '591'
+volumes:
+  redis:
+  postgres:
+  rails-assets:
+    driver: local
+  rails-packs:
+    driver: local
+  rails-uploads:
+    driver: local

@@ -1,0 +1,28 @@
+= render 'tabs'
+.panel-body
+  - if @research_tool.has_api_definition?
+    %label
+      = t('current_api_definition_file')
+    = link_to File.basename(@research_tool.api_definition_file.path),[:download_api_definition_file, :admin, @research_tool], target: '_blank'
+    = render partial: 'research_tools/api_interface'
+  = render 'api_form'
+
+  - if @research_tool.has_api_definition?
+    .clear
+    %br
+    %br
+    #editor
+      = pp @research_tool.api_definition.to_yaml
+  
+    :coffeescript
+      $ ->
+        editor = ace.edit('editor')
+        editor.setTheme 'ace/theme/solarized_light'
+        editor.getSession().setMode 'ace/mode/yaml'
+        editor.getSession().setUseWrapMode true
+        editor.gotoLine 0, 0
+        editor.renderer.setShowGutter false
+        editor.setOptions
+          readOnly: true
+          highlightActiveLine: false
+          highlightGutterLine: false

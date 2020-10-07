@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %p
+      A new message has been posted on the RISE Homepage:
+    %p
+      Name:
+    %p= @contact.name
+    %p
+      Email:
+    %p= @contact.email
+    %p Message:
+    %p= @contact.message
+    %p
+      Cheers,
+      The RISE Robot

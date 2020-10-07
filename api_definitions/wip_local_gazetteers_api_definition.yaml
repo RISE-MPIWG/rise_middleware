@@ -1,0 +1,1057 @@
+swagger: '2.0'
+info:
+  description: >-
+    Local gazetteers (difangzhi 地方志) have been major primary sources for the
+    study of China’s local history. About 8,000 titles of local gazetteers
+    dating from the tenth to the nineteenth century are still extant, covering
+    almost all well-populated regions of historical China. The authors of local
+    gazetteers were officials and local gentry who delineated the landscape,
+    flora and fauna, local products, temples and schools, officials and
+    celebrities, local culture and customs, and much more. This project unlocks
+    this treasure chest of local riches by transforming textual formats into a
+    scholarly, enhanced database for new forms of digital historical analysis. A
+    set of digital tools has been developed to help historians to quickly
+    extract data from the digitized text, to store and share the produced data
+    with peers as a new form of academic collaboration, and to apply analysis
+    tools (including GIS maps) on the produced data in order to observe patterns
+    on larger scales. We have started extracting and visualizing information on
+    regional products from 2,000 digital local gazetteers to unravel their role
+    in the historical construction of China’s “local materialities.” In the
+    second phase, the project will facilitate comparison of literary with
+    artefactual and environmental evidence. We are especially interested in
+    exploring how the change of scales—by turning local records from individual
+    gazetteers into a single global database—can reshape the study of historical
+    China.
+  version: 0.0.2
+  title: Chinese Local Gazetteer RESTful APIs
+host: localgazetteers-test.mpiwg-berlin.mpg.de
+basePath: /lg-api
+schemes:
+  - https
+securityDefinitions:
+  APIKeyHeader:
+    type: apiKey
+    in: header
+    name: X-Authorization
+security:
+  - APIKeyHeader: []
+tags:
+  - name: integration-ctrl
+    description: Api for integrations
+  - name: content-ctrl
+    description: Api for contents of books
+  - name: task-ctrl
+    description: Api for tasks
+  - name: section-ctrl
+    description: Api for sections
+  - name: book-ctrl
+    description: Api for books
+  - name: topic-ctrl
+    description: Api for topics
+paths:
+  /books:
+    get:
+      tags:
+        - book-ctrl
+      summary: Fetch book list
+      description: Fetch book list
+      operationId: searchUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: filters
+          in: query
+          description: Filters for more specific result
+          required: true
+          type: string
+        - name: page
+          in: query
+          description: Page No.
+          required: true
+          type: integer
+          format: int32
+        - name: rows
+          in: query
+          description: Rows per page
+          required: true
+          type: integer
+          format: int32
+        - name: sortField
+          in: query
+          description: Sort field
+          required: true
+          type: string
+        - name: sortOrder
+          in: query
+          description: 'Sort order, asc or desc'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/BookTO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /books/count:
+    get:
+      tags:
+        - book-ctrl
+      summary: Count of book list
+      description: Count of book list
+      operationId: getCountUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: filters
+          in: query
+          description: Filters for more specific result
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: integer
+            format: int32
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /books/level1s:
+    get:
+      tags:
+        - book-ctrl
+      summary: Search the level 1 of book
+      operationId: getLevelOneUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: keyword
+          in: query
+          description: keyword for searching the level 1 of book
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AttributeTO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /books/level2s:
+    get:
+      tags:
+        - book-ctrl
+      summary: Search the level 2 of book
+      operationId: getLevelTwoUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: keyword
+          in: query
+          description: keyword for searching the level 2 of book
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AttributeTO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /books/names:
+    get:
+      tags:
+        - book-ctrl
+      summary: Search book name with keyword
+      operationId: getNamesUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: keyword
+          in: query
+          description: keyword for searching the name of book
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AttributeTO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /books/periods:
+    get:
+      tags:
+        - book-ctrl
+      summary: Search the period of book
+      operationId: getPeriodsUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: keyword
+          in: query
+          description: keyword for searching the period of book
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AttributeTO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /contents:
+    get:
+      tags:
+        - content-ctrl
+      summary: Search content with keywords
+      description: 'Full Text Search, you can use + - do AND, NOR operation'
+      operationId: searchUsingGET_1
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: keywords
+          in: query
+          description: Keywords for full text search
+          required: true
+          type: string
+        - name: filters
+          in: query
+          description: >-
+            Filters for more specific result, eg
+            book_name:val1,val2;dynasty:val1,val2;
+          required: true
+          type: string
+        - name: page
+          in: query
+          description: Page No.
+          required: true
+          type: integer
+          format: int32
+        - name: rows
+          in: query
+          description: Rows per page
+          required: true
+          type: integer
+          format: int32
+        - name: sortField
+          in: query
+          description: Sort field
+          required: true
+          type: string
+        - name: sortOrder
+          in: query
+          description: 'Sort order, asc or desc'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ContentListTO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /contents/count:
+    get:
+      tags:
+        - content-ctrl
+      summary: Count of searching with keywords
+      description: Count of full text search.
+      operationId: getCountUsingGET_1
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: keywords
+          in: query
+          description: Keywords for full text search
+          required: true
+          type: string
+        - name: filters
+          in: query
+          description: Filters for more specific result
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: integer
+            format: int32
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /contents/export.map:
+    get:
+      tags:
+        - content-ctrl
+      summary: Download csv file with keywords and filters for LG-Map
+      operationId: exportToMapUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: keywords
+          in: query
+          description: Keywords for full text search
+          required: true
+          type: string
+        - name: filters
+          in: query
+          description: Filters for more specific result
+          required: true
+          type: string
+        - name: excludes
+          in: query
+          description: exclusive id separated by comma
+          required: true
+          type: string
+        - name: fileName
+          in: query
+          description: Name for download CSV file
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /contents/savedSearchs:
+    get:
+      tags:
+        - content-ctrl
+      summary: Fetch saved search list
+      description: User only can get his / her own list
+      operationId: getSavedSearchListUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: filters
+          in: query
+          description: Filters for more specific result
+          required: true
+          type: string
+        - name: page
+          in: query
+          description: Page No.
+          required: true
+          type: integer
+          format: int32
+        - name: rows
+          in: query
+          description: Rows per page
+          required: true
+          type: integer
+          format: int32
+        - name: sortField
+          in: query
+          description: Sort field
+          required: true
+          type: string
+        - name: sortOrder
+          in: query
+          description: 'Sort order, asc or desc'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/SavedSearchTO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+        - content-ctrl
+      summary: Save search condition
+      description: 'Save search condition, become a saved search'
+      operationId: saveSearchUsingPOST
+      consumes:
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+      parameters:
+        - name: name
+          in: formData
+          description: The name of saved search
+          required: true
+          type: string
+        - name: conditions
+          in: formData
+          description: >-
+            includes keywords and filters, eg: "keywords":"金",
+            "filters":"level1:貴州;dynasty:清,民國;"
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /contents/savedSearchs/count:
+    get:
+      tags:
+        - content-ctrl
+      summary: Count of saved search
+      description: Count of saved search belongs to login user
+      operationId: getSavedSearchCountUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: filters
+          in: query
+          description: Filters for more specific result
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: integer
+            format: int32
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  '/contents/savedSearchs/{savedId}':
+    get:
+      tags:
+        - content-ctrl
+      summary: Get saved search by id
+      description: Get saved search by id
+      operationId: getSavedSearchUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: savedId
+          in: path
+          description: The id of saved search
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SavedSearchTO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    delete:
+      tags:
+        - content-ctrl
+      summary: Get saved search by id
+      description: User only can get his / her own saved search
+      operationId: deleteSavedSearchUsingDELETE
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: savedId
+          in: path
+          description: The id of saved search
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+    patch:
+      tags:
+        - content-ctrl
+      summary: Modify the name of one saved search by id
+      description: User only can modify his / her own saved search
+      operationId: updateSavedSearchUsingPATCH
+      consumes:
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+      parameters:
+        - name: savedId
+          in: path
+          description: The id of saved search
+          required: true
+          type: string
+        - name: name
+          in: formData
+          description: The name of saved search
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+  '/integrations/tagging_text/params/contentId/{contentId}':
+    get:
+      tags:
+        - integration-ctrl
+      summary: Get parameters for tagging text
+      description: Get parameters for tagging text
+      operationId: getTaggingParamsUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: contentId
+          in: path
+          description: contentId
+          required: true
+          type: integer
+          format: int64
+        - name: filters
+          in: query
+          description: Filters for more specific result
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /sections:
+    get:
+      tags:
+        - section-ctrl
+      summary: Fetch section list
+      description: Fetch section list
+      operationId: searchUsingGET_2
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: filters
+          in: query
+          description: Filters for more specific result
+          required: true
+          type: string
+        - name: page
+          in: query
+          description: Page No.
+          required: true
+          type: integer
+          format: int32
+        - name: rows
+          in: query
+          description: Rows per page
+          required: true
+          type: integer
+          format: int32
+        - name: sortField
+          in: query
+          description: Sort field
+          required: true
+          type: string
+        - name: sortOrder
+          in: query
+          description: 'Sort order, asc or desc'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/SectionListTO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /sections/count:
+    get:
+      tags:
+        - section-ctrl
+      summary: Count of section list
+      description: Count of section list
+      operationId: getCountUsingGET_2
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: filters
+          in: query
+          description: Filters for more specific result
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: integer
+            format: int32
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /sections/names:
+    get:
+      tags:
+        - section-ctrl
+      summary: Search section name with keyword
+      operationId: getNamesUsingGET_1
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: keyword
+          in: query
+          description: keyword for searching the name of section
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AttributeTO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /tasks:
+    get:
+      tags:
+        - task-ctrl
+      summary: Fetch task list
+      description: Fetch task list
+      operationId: searchUsingGET_3
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: filters
+          in: query
+          description: Filters for more specific result
+          required: true
+          type: string
+        - name: page
+          in: query
+          description: Page No.
+          required: true
+          type: integer
+          format: int32
+        - name: rows
+          in: query
+          description: Rows per page
+          required: true
+          type: integer
+          format: int32
+        - name: sortField
+          in: query
+          description: Sort field
+          required: true
+          type: string
+        - name: sortOrder
+          in: query
+          description: 'Sort order, asc or desc'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/TaskListTO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /tasks/count:
+    get:
+      tags:
+        - task-ctrl
+      summary: Count of task list
+      description: Count of task list
+      operationId: getCountUsingGET_3
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: filters
+          in: query
+          description: Filters for more specific result
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: integer
+            format: int32
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /topics:
+    get:
+      tags:
+        - topic-ctrl
+      summary: Fetch topic list
+      description: Fetch topic list
+      operationId: searchUsingGET_4
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: filters
+          in: query
+          description: Filters for more specific result
+          required: true
+          type: string
+        - name: page
+          in: query
+          description: Page No.
+          required: true
+          type: integer
+          format: int32
+        - name: rows
+          in: query
+          description: Rows per page
+          required: true
+          type: integer
+          format: int32
+        - name: sortField
+          in: query
+          description: Sort field
+          required: true
+          type: string
+        - name: sortOrder
+          in: query
+          description: 'Sort order, asc or desc'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/TopicTO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /topics/count:
+    get:
+      tags:
+        - topic-ctrl
+      summary: Count of topic list
+      description: Count of topic list
+      operationId: getCountUsingGET_4
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: filters
+          in: query
+          description: Filters for more specific result
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: integer
+            format: int32
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /auth/login:
+    post:
+      tags:
+        - auth
+      summary: Authenticate user
+      description : Authenticate user
+      operationId: authenticateUser
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: 'X-Requested-With'
+          in: header
+          description: Request Header
+          required: true
+          type: string
+        - name: loginId
+          in: body
+          description: the user's username
+          required: true
+          type: string
+        - name: password
+          in: body
+          description: the user's password
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: integer
+            format: int32
+definitions:
+  BookTO:
+    type: object
+    properties:
+      admin_type:
+        type: string
+      book_year:
+        type: integer
+        format: int32
+      comments:
+        type: string
+      dynasty:
+        type: string
+      edition:
+        type: string
+      edition_year:
+        type: integer
+        format: int32
+      id:
+        type: string
+      last_editor:
+        type: string
+      last_modified:
+        type: string
+      level1:
+        type: string
+      level2:
+        type: string
+      name:
+        type: string
+      period:
+        type: string
+      source:
+        type: string
+  AttributeTO:
+    type: object
+    properties:
+      text:
+        type: string
+  SavedSearchTO:
+    type: object
+    properties:
+      cdate:
+        type: string
+      conditions:
+        type: string
+      mdate:
+        type: string
+      name:
+        type: string
+      sid:
+        type: string
+  SectionListTO:
+    type: object
+    properties:
+      admin_type:
+        type: string
+      book_name:
+        type: string
+      dynasty:
+        type: string
+      existing_tasks:
+        type: string
+      id:
+        type: string
+      level1:
+        type: string
+      level2:
+        type: string
+      name:
+        type: string
+      pages:
+        type: string
+      period:
+        type: string
+      source:
+        type: string
+  TaskListTO:
+    type: object
+    properties:
+      contributors:
+        type: string
+      creatorId:
+        type: integer
+        format: int64
+      id:
+        type: integer
+        format: int64
+      label:
+        type: string
+      last_modified:
+        type: string
+  TopicTO:
+    type: object
+    properties:
+      contributors:
+        type: string
+      creatorId:
+        type: integer
+        format: int64
+      description:
+        type: string
+      id:
+        type: integer
+        format: int64
+      last_modified:
+        type: string
+      name_chi:
+        type: string
+      name_eng:
+        type: string
+      name_pinyin:
+        type: string
+  ContentListTO:
+    type: object
+    properties:
+      admin_type:
+        type: string
+      book_name:
+        type: string
+      books_id:
+        type: string
+      content:
+        type: string
+      dynasty:
+        type: string
+      id:
+        type: string
+      level1:
+        type: string
+      level2:
+        type: string
+      page_no:
+        type: integer
+        format: int32
+      period:
+        type: string
+      section_name:
+        type: string

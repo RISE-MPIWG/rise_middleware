@@ -1,0 +1,51 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: 'rise'
+      POSTGRES_PASSWORD: 'risepassword'
+    volumes:
+      - 'postgres:/var/lib/postgresql/data'
+  redis:
+    image: 'redis:latest'
+    command: redis-server
+    volumes:
+      - 'redis:/var/lib/redis/data'
+  web:
+    tty: true
+    stdin_open: true
+    links:
+      - 'postgres'
+      - 'redis'
+      - 'webpacker'
+    build: .
+    ports:
+      - '3000:3000'
+    volumes:
+      - '.:/rise'
+    env_file:
+      - '.env'
+  resque_worker:
+    links:
+      - 'postgres'
+      - 'redis'
+    image: rise_web
+    env_file:
+      - '.env'
+    depends_on:
+      - 'web'
+    command: bundle exec rake environment resque:pool
+  webpacker:
+    build: .
+    env_file:
+      - '.env'
+    command: ./bin/webpack-dev-server
+    volumes:
+      - .:/rise
+    ports:
+      - '3035:3035'
+volumes:
+  redis:
+  postgres:
+  webpacker:

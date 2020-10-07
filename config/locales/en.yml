@@ -1,0 +1,248 @@
+en:
+  front_end:
+    browser:
+      title: Sections
+      placeholder: Search
+    selections:
+      title: Selected Sections
+      undertitle: No items selected. Please select one or several sections.
+      open: Open
+      selected_resources: selected sections with
+    preview:
+      title: Preview
+      undertitle: Click on selected resource to preview it.
+      placeholder: Search
+    permission:
+      message: You don't have access to this resource. Please contact us if you think you should be able to access it.
+  help: Help
+  docs: Docs
+  documentation: "SHINE API"
+  documentation_1: SHINE allows researchers and research tools to access a wide range of full text resources from a range of providers in a standard and unified way.
+  for_researchers: For Researchers
+  for_research_tool_developers: SHINE Documentation For Research Tool Developers
+  for_resource_providers: SHINE Documentation For Resource Providers
+  you_are_here: "You are here:"
+  tools: "Tools"
+  rise: RISE
+  shine: SHINE
+  shine_api: SHINE API
+  home:
+    learn_more: Learn more
+    home: Home
+    about_text: "RISE Project—Research Infrastructure for the Study of Eurasia—is a digital research infrastructure developed by the Max Planck Institute for the History of Science. It is a pioneering approach for resource dissemination and emerging data analytics in the humanities. Its various technical components facilitate the secure linkage between third-party research tools to various third-party textual collections (both licensed and open-access ones) via a standard set of APIs called %{shine_path: SHINE}."
+    for_researchers_text: "Gain unprecedented access to textual resources in a machine-readable format, so that they can be analyzed in research tools in a seamless and legal research workflow! Please %{sign_up:sign up} and visit the %{resources_page:RISE Catalog} to view the resources you have access to based on your affiliation."
+    for_research_tool_developers_text: "Connect easily to resource repositories and make data import painless for your users!"
+    for_resource_providers_text: "Reach more users, connect easily to research tools and facilitate resource exchange securely!"
+    standard_rp_text: "Implement %{shine_path: SHINE-compatible API endpoints} to manage access to your resources and to make them available via the ."
+    hosted_rp_text: "Use the %{toolkits_path: RISE-RP Toolkit} to host and publish the resources that you want to share via %{doc_path: SHINE}."
+    rp_bottom_text: "Contact our team to get started"
+    standard_rtd_text: "Implement %{doc_path: SHINE-compatible API endpoints} to securely consume resources available via the %{catalog_path: RISE Catalog}."
+    hosted_rtd_text: "Use the %{toolkits_path: RISE-CM Toolkit} to allow users to browse and import SHINE-compatible resources directly in your tool's user interface."
+    rtd_bottom_text: 
+  api_help_text: Use the interface below to interact with the SHINE API. Use your RISE-API-TOKEN to authenticate your interactions. Your individual RISE-API-TOKEN will appear below once you have logged in.
+  resource_provider_help_text: SHINE's standard API mapper requires resource providers to implement a minimal set of API endpoints to make their resources available. Resources are protected by the RISE-API-TOKEN authorization header. This token mechanism allows resource providers to limit and monitor access to their resources.
+  researcher_help_text: Rise gives your favourite research tools access to both open-access resources such as Kanripo and more private ones, usually made accessible to you through your research institution/affiliation.
+  edit_account: My Account
+  general_information: General Information
+  api_documentation: API Documentation
+  search: Search
+  sign_out: Sign Out
+  welcome_to_rise: Welcome to the RISE Project
+  rise_and_shine: RISE Project
+  use_form_below_to_browse_our_catalog: Please use the form below to browse the catalog
+  you_are_logged_in_as: You are logged in as
+  access: Access
+  properties: Properties
+  actions: Actions
+  admin_nav: Admin
+  provider: Provider
+  showing: Showing
+  my: My
+  are_you_sure: Are you sure?
+  monitor_jobs: Monitor Jobs
+  access_right: Access Right
+  audit_trail: User Activity
+  change_my_password: Change My Password
+  api_authentication: API Authentication
+  api_access: API Access
+  scrap_collections: Scrap Collections
+  generate_a_new_token: Generate a new Token
+  api_key_use_explanation: 'Use your API token by setting up a request header in the following way:'
+  general_information: General Information
+  current_api_definition_file: "Current API definition file:"
+  current_rise_api_token: "Your current SHINE API token:"
+  api_definition: API Definition
+  mapping: API Mapping
+  select_node: "Please select a section to view available options available to you for this resource"
+  selected_node: "Selected Section"
+  all_filter: "All %{model}"
+  open_with: "Open with %{research_tool}"
+  access_to: "Access to"
+  enabled: "Enabled %{model}"
+  catalog: Catalog
+  number_of_resources: Number of Resources
+  action:
+    remove: Remove
+    show: Show
+    edit: Edit
+    create: Create
+    delete: Delete
+    archive: Archive
+    new: "New %{model}"
+    add: "Add %{model}"
+    manage_access: Manage Access
+    manage_organisation_access: Manage Organisation Access
+    manage_research_tool_access: Manage Research Tool Access
+    manage: Manage
+    managing: Managing
+    download: Download
+    add_to_corpus: Add to this Corpus
+    perform_search: Perform Search
+    pull_full_text: Pull Full Text
+    refresh_index: Refresh Index
+    refresh_all_indexes: Refresh All Indexes
+  search_for_a: "Search for a %{model}"
+  search_by: "Search by %{value}"
+  search: "Search"
+  errors:
+    messages:
+      extension_whitelist_error: only .yaml and .yml extensions are allowed
+      invalid_api_definition_schema: This API definition file is invalid - Please make sure that your schema definition adheres to the OpenAPI (Swagger) 2.0 standard.
+      no_api_mapping_module: This Collection's mapping module is not set! Please choose one in the Properties interface
+  languages:
+    'zh-Hant': Traditional Chinese
+    'grc': Greek
+    'lat': Latin
+    'en-GB': English
+    'fr-FR': French
+    'de-DE': German
+    'ar': Arabic
+    'bo': Tibetan
+  added_to_your_corpus: added to your corpus
+  removed_from_your_corpus: removed from your corpus
+  job_completed: Job Completed
+  refresh_index_for: Refresh index for
+  refresh_collections_for: Refresh collections for
+  error_occured: An error occured
+  tags_updated: Tags were updated
+  resources:
+    index:
+      title: Catalog
+    show:
+      title: Browser Resource
+  devise:
+    passwords:
+      new:
+        title: Reset Password
+      edit:
+        title: Change Password
+    sessions:
+      new:
+        title: Sign in
+  pages:
+    index:
+      title: Home
+    about:
+      title: About
+    doc_for_resource_providers:
+      title: Documentation for Resource Providers
+    doc_for_developers:
+      title: Documentation for Developers
+    community:
+      title: Community
+    toolkit:
+      title: Toolkits
+    coc:
+      title: Code of Conduct
+    imprint:
+      title: Imprint
+  users:
+    registrations:
+      new:
+        title: Sign up
+      edit:
+        title: Edit Account
+  collections:
+    index:
+      title: Collections
+  corpora:
+    edit:
+      title: My Corpus - Properties
+    tools:
+      title: My Corpus - Tools
+    resources:
+      index:
+        title: My Corpus - Resources
+      show:
+        title: My Corpus - View Resource
+  admin:
+    collections:
+      index:
+        title: Admin - Collections
+      new:
+        title: Admin - Collections - New
+      edit:
+        title: Admin - Collections - Edit
+      resources:
+        index:
+          title: Admin - Collections - Resources
+        show:
+          title: Admin - Collection - View Resource
+      manage_organisation_access:
+        title: Admin - Collection - Manage Access
+      organisations:
+        title: Admin - Collection - Update Access    
+    users:
+      index:
+        title: Admin - Users
+      edit:
+        title: Admin - Users - Edit
+    user_logs:
+      index:
+        title: Admin - User Activities
+    research_tools:
+      index:
+        title: Admin - Research Tools
+      new:
+        title: Admin - Research Tools - New
+      manage_access:
+        title: Admin - Manage Access
+      edit:
+        title: Admin - Research Tools - Edit
+    organisations:
+      index:
+        title: Admin - Organisations
+      new:
+        title: Admin - Organisations - New
+      edit:
+        title: Admin - Organisations - Edit
+    monitor_jobs:
+      index:
+        title: Admin - Monitor Jobs
+
+  get_started: Get started
+  slogan: Standard for secure resource exchange and interoperability
+  about_content:
+    text_1: "%{shine_path: SHINE} is a set of standardized application programming interfaces (API) for exchanging textual resources, both open-access ones and protected (or licensed) ones that require authentication and authorization. Resource providers and research tool developers will find %{shine_path: SHINE} useful because it supports interoperability among resource repositories and research tools in a decentralized manner. Researchers will find %{shine_path: SHINE} useful because they will gain unprecedented access to textual resources in a machine-readable format, so that textual resources can be analyzed in research tools in a seamless and legal research workflow."
+    text_2: "RISE is a middleware that protects resource exchanges via %{shine_path: SHINE}. It authenticates and authorizes these exchanges, especially for protected (or licensed) resources. It also includes a browser-based administrative interface for resource providers, research tool developers, and research organizations to regulate protocols for specific resource exchanges. To access RISE, please %{sign_up: sign up here}."
+    text_3: "To demonstrate the benefits of adopting RISE and/or %{shine_path: SHINE} and to encourage third-party development of SHINE-compatible technical solutions, %{toolkits_path: a suite of open-resource softwares linked to RISE} are available for others to adopt and adapt for their own purposes."
+    text_4: "The RISE Project is developed by the %{max_planck_path: Max Planck Institute for the History of Science}, with the support of %{sbb_path: Staatsbibliothek zu Berlin}. To see all the project collaborators and learn how you can get involved, please visit %{community_path: this link}."
+
+  community: Community
+  community_content:
+    how_to_get_involved: "How to get involved:"
+    text_1: The RISE Project encompasses three core development partners and many collaborators. It depends on active feedback from a wide range of stakeholders—such as libraries, archives, research software developers, and research institutions—interested in enabling seamless access to textual resources for digital research. We hope you will find RISE and SHINE useful, and we encourage you to get involved!
+    text_2: "Partners and Collaborators:"
+    text_3: "The RISE Project community is growing rapidly, and we want to recruit your institution too!"
+    bullet_1: "Sign up for an account to access the %{catalog_path: RISE Catalog} and receive regular updates"
+    bullet_2: "Explore the %{shine_path: SHINE API} and see how it might be useful to your work"
+    bullet_3: "Explore the %{github_link: developers’ toolkits} and build your own applications or software modules based on SHINE"
+    bullet_4: "%{forum_link: Share ideas and feedback about the project}"
+
+  toolkits: Toolkits
+  toolkits_content:
+    text_1: "The RISE Project encourages and supports third-party development of applications and software modules based on SHINE. The more ‘plug-and-play’ use cases we have, the more robust the research infrastructure becomes!"
+    text_2: "To demonstrate the benefits of working with RISE and to encourage third-party development of SHINE-compatible technical solutions, a suite of open-source toolkits is available for others to adopt and adapt for their own purposes. They can be found on the RISE Project's Github page."
+    bullet_1: "RISE-RP is a reference implementation for resource providers to publish their resources via SHINE."
+    bullet_2: "RISE-JS is a JavaScript library for research tool developers to enable their research tools’ resource consumption via SHINE."
+    bullet_3: "RISE-Catalog is a browser client that research organizations could customize and implement to facilitate resource discovery and resource-tool linkage for their researchers."

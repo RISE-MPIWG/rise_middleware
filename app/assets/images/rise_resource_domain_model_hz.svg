@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="-167 -158 804 103" width="804" height="103">
+  <defs>
+    <font-face font-family="Calibri" font-size="20" panose-1="2 15 5 2 2 2 4 3 2 4" units-per-em="1000" underline-position="-113.28125" underline-thickness="65.42969" slope="0" x-height="464.35547" cap-height="631.8359" ascent="952.1484" descent="-268.5547" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Calibri"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="CrowsFeet_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -5 12 10" markerWidth="12" markerHeight="10" color="#7f8080">
+      <g>
+        <path d="M 0 0 L 10 0 M 0 -4 L 10 0 L 0 4" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="DoubleStickArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 18 8" markerWidth="18" markerHeight="8" color="#7f8080">
+      <g>
+        <path d="M 16 0 L 0 0 M 8 -3 L 16 0 L 8 3 M 0 -3 L 8 0 L 0 3" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="Calibri" font-size="14" panose-1="2 15 5 2 2 2 4 3 2 4" units-per-em="1000" underline-position="-113.28125" underline-thickness="65.42969" slope="0" x-height="464.35547" cap-height="631.8359" ascent="952.1484" descent="-268.5547" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Calibri"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.10.2 
+    <dc:date>2019-04-17 11:53:09 +0000</dc:date>
+  </metadata>
+  <g id="Canvas_1" stroke-dasharray="none" stroke="none" stroke-opacity="1" fill="none" fill-opacity="1">
+    <title>Canvas 1</title>
+    <g id="Canvas_1: Layer 1">
+      <title>Layer 1</title>
+      <g id="Graphic_2">
+        <path d="M -155.386 -127.5 L -18 -127.5 C -12.477153 -127.5 -8 -123.02285 -8 -117.5 L -8 -89.35714 C -8 -83.8343 -12.477153 -79.35714 -18 -79.35714 L -155.386 -79.35714 C -160.90885 -79.35714 -165.386 -83.8343 -165.386 -89.35714 L -165.386 -117.5 C -165.386 -123.02285 -160.90885 -127.5 -155.386 -127.5 Z" fill="#ededed"/>
+        <path d="M -155.386 -127.5 L -18 -127.5 C -12.477153 -127.5 -8 -123.02285 -8 -117.5 L -8 -89.35714 C -8 -83.8343 -12.477153 -79.35714 -18 -79.35714 L -155.386 -79.35714 C -160.90885 -79.35714 -165.386 -83.8343 -165.386 -89.35714 L -165.386 -117.5 C -165.386 -123.02285 -160.90885 -127.5 -155.386 -127.5 Z" stroke="#ff2f7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(-160.386 -116.42857)" fill="black">
+          <tspan font-family="Calibri" font-size="20" font-weight="400" fill="black" x="33.194953" y="19">Collection</tspan>
+        </text>
+      </g>
+      <g id="Line_20">
+        <line x1="37.5" y1="-103.42857" x2="-6.5" y2="-103.42857" marker-start="url(#CrowsFeet_Marker)" stroke="#7f8080" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_30">
+        <line x1="556" y1="-67.35714" x2="446.4" y2="-67.35714" marker-end="url(#DoubleStickArrow_Marker)" stroke="#7f8080" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_45">
+        <path d="M 49.5 -127.5 L 186.886 -127.5 C 192.40885 -127.5 196.886 -123.02285 196.886 -117.5 L 196.886 -89.35714 C 196.886 -83.8343 192.40885 -79.35714 186.886 -79.35714 L 49.5 -79.35714 C 43.97715 -79.35714 39.5 -83.8343 39.5 -89.35714 L 39.5 -117.5 C 39.5 -123.02285 43.97715 -127.5 49.5 -127.5 Z" fill="#ededed"/>
+        <path d="M 49.5 -127.5 L 186.886 -127.5 C 192.40885 -127.5 196.886 -123.02285 196.886 -117.5 L 196.886 -89.35714 C 196.886 -83.8343 192.40885 -79.35714 186.886 -79.35714 L 49.5 -79.35714 C 43.97715 -79.35714 39.5 -83.8343 39.5 -89.35714 L 39.5 -117.5 C 39.5 -123.02285 43.97715 -127.5 49.5 -127.5 Z" stroke="#ff2f7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(44.5 -116.42857)" fill="black">
+          <tspan font-family="Calibri" font-size="20" font-weight="400" fill="black" x="36.481086" y="19">Resource</tspan>
+        </text>
+      </g>
+      <g id="Graphic_46">
+        <path d="M 254.386 -127.5 L 391.772 -127.5 C 397.29485 -127.5 401.772 -123.02285 401.772 -117.5 L 401.772 -89.35714 C 401.772 -83.8343 397.29485 -79.35714 391.772 -79.35714 L 254.386 -79.35714 C 248.86315 -79.35714 244.386 -83.8343 244.386 -89.35714 L 244.386 -117.5 C 244.386 -123.02285 248.86315 -127.5 254.386 -127.5 Z" fill="#ededed"/>
+        <path d="M 254.386 -127.5 L 391.772 -127.5 C 397.29485 -127.5 401.772 -123.02285 401.772 -117.5 L 401.772 -89.35714 C 401.772 -83.8343 397.29485 -79.35714 391.772 -79.35714 L 254.386 -79.35714 C 248.86315 -79.35714 244.386 -83.8343 244.386 -89.35714 L 244.386 -117.5 C 244.386 -123.02285 248.86315 -127.5 254.386 -127.5 Z" stroke="#ff2f7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(249.386 -116.42857)" fill="black">
+          <tspan font-family="Calibri" font-size="20" font-weight="400" fill="black" x="43.79554" y="19">Section</tspan>
+        </text>
+      </g>
+      <g id="Graphic_47">
+        <path d="M 459.272 -127.5 L 596.658 -127.5 C 602.18085 -127.5 606.658 -123.02285 606.658 -117.5 L 606.658 -89.35714 C 606.658 -83.8343 602.18085 -79.35714 596.658 -79.35714 L 459.272 -79.35714 C 453.74915 -79.35714 449.272 -83.8343 449.272 -89.35714 L 449.272 -117.5 C 449.272 -123.02285 453.74915 -127.5 459.272 -127.5 Z" fill="#ededed"/>
+        <path d="M 459.272 -127.5 L 596.658 -127.5 C 602.18085 -127.5 606.658 -123.02285 606.658 -117.5 L 606.658 -89.35714 C 606.658 -83.8343 602.18085 -79.35714 596.658 -79.35714 L 459.272 -79.35714 C 453.74915 -79.35714 449.272 -83.8343 449.272 -89.35714 L 449.272 -117.5 C 449.272 -123.02285 453.74915 -127.5 459.272 -127.5 Z" stroke="#ff2f7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(454.272 -116.42857)" fill="black">
+          <tspan font-family="Calibri" font-size="20" font-weight="400" fill="black" x="21.622688" y="19">Content Unit</tspan>
+        </text>
+      </g>
+      <g id="Line_48">
+        <line x1="242.386" y1="-103.42857" x2="198.386" y2="-103.42857" marker-start="url(#CrowsFeet_Marker)" stroke="#7f8080" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_49">
+        <line x1="447.272" y1="-103.42857" x2="403.272" y2="-103.42857" marker-start="url(#CrowsFeet_Marker)" stroke="#7f8080" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_50">
+        <path d="M 380.80334 -129.49983 L 380.0769 -157.10399 L 322.18966 -157.27586 L 322.65666 -129" marker-start="url(#CrowsFeet_Marker)" stroke="#7f8080" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_52">
+        <path d="M 566 -79.35714 L 627 -79.35714 C 632.52285 -79.35714 637 -74.87999 637 -69.35714 L 637 -65.35714 C 637 -59.834295 632.52285 -55.35714 627 -55.35714 L 566 -55.35714 C 560.47715 -55.35714 556 -59.834295 556 -65.35714 L 556 -69.35714 C 556 -74.87999 560.47715 -79.35714 566 -79.35714 Z" fill="#ff2f7b"/>
+        <path d="M 566 -79.35714 L 627 -79.35714 C 632.52285 -79.35714 637 -74.87999 637 -69.35714 L 637 -65.35714 C 637 -59.834295 632.52285 -55.35714 627 -55.35714 L 566 -55.35714 C 560.47715 -55.35714 556 -59.834295 556 -65.35714 L 556 -69.35714 C 556 -74.87999 560.47715 -79.35714 566 -79.35714 Z" stroke="#fcfff2" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+        <text transform="translate(561 -76.35714)" fill="white">
+          <tspan font-family="Calibri" font-size="14" font-weight="400" fill="white" x="7.879395" y="13">Metadata</tspan>
+        </text>
+      </g>
+      <g id="Graphic_53">
+        <path d="M 357.5 -79.35714 L 418.5 -79.35714 C 424.02285 -79.35714 428.5 -74.87999 428.5 -69.35714 L 428.5 -65.35714 C 428.5 -59.834295 424.02285 -55.35714 418.5 -55.35714 L 357.5 -55.35714 C 351.97715 -55.35714 347.5 -59.834295 347.5 -65.35714 L 347.5 -69.35714 C 347.5 -74.87999 351.97715 -79.35714 357.5 -79.35714 Z" fill="#ff2f7b"/>
+        <path d="M 357.5 -79.35714 L 418.5 -79.35714 C 424.02285 -79.35714 428.5 -74.87999 428.5 -69.35714 L 428.5 -65.35714 C 428.5 -59.834295 424.02285 -55.35714 418.5 -55.35714 L 357.5 -55.35714 C 351.97715 -55.35714 347.5 -59.834295 347.5 -65.35714 L 347.5 -69.35714 C 347.5 -74.87999 351.97715 -79.35714 357.5 -79.35714 Z" stroke="#fcfff2" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+        <text transform="translate(352.5 -76.35714)" fill="white">
+          <tspan font-family="Calibri" font-size="14" font-weight="400" fill="white" x="7.879395" y="13">Metadata</tspan>
+        </text>
+      </g>
+      <g id="Graphic_54">
+        <path d="M 149 -79.35714 L 210 -79.35714 C 215.52285 -79.35714 220 -74.87999 220 -69.35714 L 220 -65.35714 C 220 -59.834295 215.52285 -55.35714 210 -55.35714 L 149 -55.35714 C 143.47715 -55.35714 139 -59.834295 139 -65.35714 L 139 -69.35714 C 139 -74.87999 143.47715 -79.35714 149 -79.35714 Z" fill="#ff2f7b"/>
+        <path d="M 149 -79.35714 L 210 -79.35714 C 215.52285 -79.35714 220 -74.87999 220 -69.35714 L 220 -65.35714 C 220 -59.834295 215.52285 -55.35714 210 -55.35714 L 149 -55.35714 C 143.47715 -55.35714 139 -59.834295 139 -65.35714 L 139 -69.35714 C 139 -74.87999 143.47715 -79.35714 149 -79.35714 Z" stroke="#fcfff2" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+        <text transform="translate(144 -76.35714)" fill="white">
+          <tspan font-family="Calibri" font-size="14" font-weight="400" fill="white" x="7.879395" y="13">Metadata</tspan>
+        </text>
+      </g>
+      <g id="Graphic_55">
+        <path d="M -59.5 -79.35714 L 1.5 -79.35714 C 7.0228475 -79.35714 11.5 -74.87999 11.5 -69.35714 L 11.5 -65.35714 C 11.5 -59.834295 7.0228475 -55.35714 1.5 -55.35714 L -59.5 -55.35714 C -65.02285 -55.35714 -69.5 -59.834295 -69.5 -65.35714 L -69.5 -69.35714 C -69.5 -74.87999 -65.02285 -79.35714 -59.5 -79.35714 Z" fill="#ff2f7b"/>
+        <path d="M -59.5 -79.35714 L 1.5 -79.35714 C 7.0228475 -79.35714 11.5 -74.87999 11.5 -69.35714 L 11.5 -65.35714 C 11.5 -59.834295 7.0228475 -55.35714 1.5 -55.35714 L -59.5 -55.35714 C -65.02285 -55.35714 -69.5 -59.834295 -69.5 -65.35714 L -69.5 -69.35714 C -69.5 -74.87999 -65.02285 -79.35714 -59.5 -79.35714 Z" stroke="#fcfff2" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+        <text transform="translate(-64.5 -76.35714)" fill="white">
+          <tspan font-family="Calibri" font-size="14" font-weight="400" fill="white" x="7.879395" y="13">Metadata</tspan>
+        </text>
+      </g>
+      <g id="Line_56">
+        <line x1="347.5" y1="-67.35714" x2="237.9" y2="-67.35714" marker-end="url(#DoubleStickArrow_Marker)" stroke="#7f8080" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_57">
+        <line x1="139" y1="-67.35714" x2="29.4" y2="-67.35714" marker-end="url(#DoubleStickArrow_Marker)" stroke="#7f8080" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

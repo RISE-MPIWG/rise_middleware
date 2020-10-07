@@ -1,0 +1,16 @@
+- breadcrumb :admin_research_tool_organisations, @research_tool
+= render 'admin/research_tools/tabs'
+= datagrid_form_for @organisations_grid, url: [:manage_access, :admin, @research_tool]
+- @total_count = @organisations_grid.assets.total_count
+= t 'showing'
+#{@total_count} #{Organisation.model_name.human(count: @total_count)}
+= datagrid_table(@organisations_grid)
+= paginate @organisations_grid.assets, theme: 'twitter-bootstrap-4'
+
+
+:coffeescript
+  $('select').each ->
+    $(this).change ->
+      $(this).parent('form').trigger 'submit.rails'
+      $(this).siblings('.fa-circle-o-notch').fadeIn()
+

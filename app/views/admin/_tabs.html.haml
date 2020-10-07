@@ -1,0 +1,27 @@
+.col-sm-3.col-md-2.sidebar
+  %ul.nav.nav-pills.flex-column.admin__sticky-bar
+    %li.nav-item
+      = active_link_to admin_collections_path, class: 'nav-link' do
+        = icon 'fas', 'books'
+        = Collection.model_name.human(count: 2)
+    %li.nav-item
+      = active_link_to admin_users_path, class: 'nav-link' do
+        = icon 'fas', 'users'
+        = User.model_name.human(count: 2)
+    %li.nav-item
+      = active_link_to admin_user_logs_path, class: 'nav-link' do
+        = icon 'fas', 'chart-bar'
+        = UserLog.model_name.human(count: 2)
+    - if current_power.super_admin?
+      %li.nav-item
+        = active_link_to admin_research_tools_path, active: :inclusive, class: 'nav-link' do
+          = icon 'fas', 'wrench'
+          = ResearchTool.model_name.human(count: 2)
+      %li.nav-item
+        = active_link_to admin_organisations_path, class: 'nav-link' do
+          = icon 'fas', 'university'
+          = Organisation.model_name.human(count: 2)
+      %li.nav-item
+        = active_link_to admin_monitor_jobs_path, class: 'nav-link', data: { turbolinks: false } do
+          = icon 'fas', 'cogs'
+          = t('monitor_jobs')

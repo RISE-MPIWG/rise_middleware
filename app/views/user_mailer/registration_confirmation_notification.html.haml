@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %p
+      Dear #{@email},
+    %p
+      Your new RISE account is ready!
+    %p
+      Here are your credentials:
+      username:  #{@email}
+      temporary password: #{@password}
+      Please change your temporary password as soon as possible.
+    %p
+      Best Regards,
+      The Rise Robot

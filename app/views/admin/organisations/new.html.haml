@@ -1,0 +1,5 @@
+- breadcrumb :admin_organisation_new
+%h3.display-3.text-center
+  = icon 'fas', 'university'
+  = t 'action.new', model: Organisation.model_name.human(count: 1)
+= render 'form'

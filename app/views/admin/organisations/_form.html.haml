@@ -1,0 +1,21 @@
+= simple_form_for([:admin, @organisation]) do |f|
+  = f.error_notification
+  .form-group
+    = f.input :name
+  .form-group
+    = f.input :slug
+  .form-group
+    = f.input :saml_issuer_uri, disabled: true
+  .form-group
+    = f.input :api_key
+  .form-group
+    = f.input :api_url
+  .form-group
+    = f.input :default_collection_access_type, include_blank: false
+  .form-group
+    = f.input :api_mapping_module, include_blank: false
+  .form-group
+    - if @organisation.persisted?
+      = f.submit t('scrap_collections'), class: 'btn-sm btn-default btn float-left', formaction: scrap_collections_admin_organisation_path
+      .clearfix.mb-3
+    = f.button :button, type: :submit, class: 'btn-submit'

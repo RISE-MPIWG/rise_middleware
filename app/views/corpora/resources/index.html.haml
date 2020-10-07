@@ -1,0 +1,11 @@
+- breadcrumb :corpus_resources, @corpus
+= render 'corpora/tabs'
+.container-fluid
+  .col-md-12
+    = datagrid_form_for @resources_grid, url: corpus_resources_path
+    - @total_count = @resources_grid.assets.total_count
+    %span.display-4.mb-2
+      = @total_count
+      = Resource.model_name.human(count: @total_count)
+    = datagrid_table(@resources_grid)
+    = paginate @resources_grid.assets, theme: 'twitter-bootstrap-4'

@@ -1,0 +1,8 @@
+= simple_form_for(@tool_export) do |f|
+  = f.error_notification
+  = f.input :name
+  = f.input :notes
+  = f.input :file, as: :file
+  = f.input :privacy_type
+  .actions
+    = f.button :button, type: :submit, class: 'btn-submit'

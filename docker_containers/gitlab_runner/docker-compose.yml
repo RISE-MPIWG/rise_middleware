@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  runner:
+    build: 
+      context: .
+      args:
+        url: https://gitlab.gwdg.de/
+        registration_token: zsoQj4fQRdK6As3sQMJr

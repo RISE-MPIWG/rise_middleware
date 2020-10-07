@@ -1,0 +1,20 @@
+{
+  "application.css": "/packs/application-51bf9ae63f171bbd621e01d6f38c96ae.css",
+  "application.css.map": "/packs/application-51bf9ae63f171bbd621e01d6f38c96ae.css.map",
+  "application.js": "/packs/application-7e61cca053806b16feff.js",
+  "application.js.map": "/packs/application-7e61cca053806b16feff.js.map",
+  "applications.css": "/packs/applications-d41d8cd98f00b204e9800998ecf8427e.css",
+  "applications.css.map": "/packs/applications-d41d8cd98f00b204e9800998ecf8427e.css.map",
+  "applications.js": "/packs/applications-aab223920e5b685ba79f.js",
+  "applications.js.map": "/packs/applications-aab223920e5b685ba79f.js.map",
+  "components/card.js": "/packs/components/card-38062ec8e03876d7c233.js",
+  "components/card.js.map": "/packs/components/card-38062ec8e03876d7c233.js.map",
+  "components/openWith.css": "/packs/components/openWith-698a29e57730c45b50d263521dff6f10.css",
+  "components/openWith.css.map": "/packs/components/openWith-698a29e57730c45b50d263521dff6f10.css.map",
+  "components/openWith.js": "/packs/components/openWith-97d94f323c6d85487cc3.js",
+  "components/openWith.js.map": "/packs/components/openWith-97d94f323c6d85487cc3.js.map",
+  "components/spinner.css": "/packs/components/spinner-e3c3a95ae1fc9deb76b7e94b2e7e9b77.css",
+  "components/spinner.css.map": "/packs/components/spinner-e3c3a95ae1fc9deb76b7e94b2e7e9b77.css.map",
+  "components/spinner.js": "/packs/components/spinner-f771a877bdd5b7f051ba.js",
+  "components/spinner.js.map": "/packs/components/spinner-f771a877bdd5b7f051ba.js.map"
+}

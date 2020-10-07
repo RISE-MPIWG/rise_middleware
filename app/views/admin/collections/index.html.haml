@@ -1,0 +1,15 @@
+- breadcrumb :admin_collections
+
+= datagrid_form_for @collections_grid, url: admin_collections_path
+- @total_count = @collections_grid.assets.total_count
+
+.mb-2.clearfix.va-center
+  %span.display-4
+    = t 'showing'
+    #{@total_count} #{Collection.model_name.human(count: @total_count)}
+
+  - if current_user.super_admin?
+    = icon_link_to t('action.new', model: Collection.model_name.human), new_admin_collection_path, 'plus', class: 'float-right margin-left-5px'
+    = icon_link_to t('action.refresh_all_indexes'), [:refresh_all_indexes, :admin, Collection], 'sync', class: 'float-right margin-left-5px'
+= datagrid_table(@collections_grid)
+= paginate @collections_grid.assets, theme: 'twitter-bootstrap-4'

@@ -1,0 +1,179 @@
+version: '3.6'
+
+services:
+  nginx:
+    restart: always
+    build: ./docker_containers/production/nginx
+    image: rise/nginx_production:latest
+    links:
+      - web:web
+    ports:
+      - "443:443"
+      - "80:80"
+    volumes:
+      - rails-assets:/rise/public/assets
+      - rails-packs:/rise/public/packs
+      - rails-uploads:/rise/uploads
+      - rails-webfonts:/rise/public/webfonts
+      - rails-jslib:/rise/public/jslib
+    depends_on:
+      - web
+      - swagger-ui
+      - swagger-ui-rp
+      - portainer
+      - shibbo-sp
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+  postgres:
+    restart: always
+    image: 'postgres'
+    environment:
+      POSTGRES_USER: 'rise'
+      POSTGRES_PASSWORD: 'risepassword'
+    volumes:
+      - 'postgres:/var/lib/postgresql/data'
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+  redis:
+    restart: always
+    image: 'redis:3.2-alpine'
+    command: redis-server
+    volumes:
+      - 'redis:/var/lib/redis/data'
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+  web:
+    restart: always
+    depends_on:
+      - 'postgres'
+      - 'redis'
+    build: 
+      context: .
+      dockerfile: Dockerfile-production
+    image: rise/web:latest
+    env_file:
+      - '.production.env'
+    volumes:
+      - rails-assets:/rise/public/assets
+      - rails-packs:/rise/public/packs
+      - rails-webfonts:/rise/public/webfonts
+      - rails-jslib:/rise/public/jslib
+      - ~/.bash_history:/root/.bash_history
+    command: bundle exec puma -C ./config/puma.rb
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+    ports:
+      - "4000:4000"
+
+  shibbo-sp:
+    build: docker_containers/production/shibboleth_sp
+    image: rise/shibboleth_sp:latest
+    ports:
+     - "222:222"
+    env_file:
+      - '.production.env'
+    links:
+      - 'web'
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+  # scheduler:
+  #   image: docker.gitlab.gwdg.de/portal.pbeloui/rise/web:latest
+  #   env_file: .env
+  #   command: clockwork config/clock.rb
+  #   depends_on:
+  #     - postgres
+  #     - resque_worker
+  resque_worker:
+    restart: always
+    image: rise/web:latest
+    depends_on:
+      - 'postgres'
+      - 'redis'
+    env_file:
+      - '.production.env'
+    command: bundle exec rake environment resque:pool
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    ports: 
+      - '8080:8080'
+    environment:
+      DOC_EXPANSION: 'list'
+      URL: 'https://rise.mpiwg-berlin.mpg.de/api-docs/v1/swagger.json'
+
+  swagger-ui-rp:
+    image: swaggerapi/swagger-ui
+    ports: 
+      - '591:591'
+    environment:
+      URL: 'https://rise.mpiwg-berlin.mpg.de/api-docs/v1/for_resource_providers.json'
+      PORT: '591'
+      DOC_EXPANSION: 'list'
+  portainer:
+    ports: 
+      - '9000:9000'
+    image: portainer/portainer
+    command: -H unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+
+  # pgbackups:
+  #   image: prodrigestivill/postgres-backup-local
+  #   restart: always
+  #   volumes:
+  #     - pg_backups:/backups
+  #   links:
+  #     - postgres
+  #   depends_on:
+  #     - postgres
+  #   environment:
+  #     POSTGRES_HOST: 'postgres'
+  #     POSTGRES_DB: 'rise_production'
+  #     POSTGRES_USER: 'rise'
+  #     POSTGRES_PASSWORD: 'risepassword'
+  #     POSTGRES_EXTRA_OPTS: '-Z9 --schema=public --blobs'
+  #     SCHEDULE: '@daily'
+  #     BACKUP_KEEP_DAYS: '7'
+  #     BACKUP_KEEP_WEEKS: '4'
+  #     BACKUP_KEEP_MONTHS: '6'
+
+volumes:
+  pg_backups:
+    driver: local
+  portainer_data:
+    driver: local
+  redis:
+    driver: local
+  postgres:
+    driver: local
+  rails-assets:
+    driver: local
+  rails-webfonts:
+    driver: local
+  rails-packs:
+    driver: local
+  rails-uploads:
+    driver: local
+  rails-jslib:
+    driver: local

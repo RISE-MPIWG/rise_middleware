@@ -1,0 +1,66 @@
+.content__section--intro
+  .container-fluid
+    / <div class="jumbotron jumbotron-flush">
+    .row
+      .col-12
+        %h1.display-1= t 'community'
+      .col-12.col-lg-8
+        %p.lead= t 'community_content.text_1'
+
+.content__section
+  .container-fluid
+    .row
+      .col-12.col-md-6
+        %h3= t 'community_content.text_2'
+        %h4= t('community_content.text_3')
+        %ul
+          %li
+            = link_to "Chinese Buddhist Electronic Text Association", "http://www.cbeta.org/", target: '_blank'
+            (Jen-Jou “Joey” Hung)
+          %li
+            = link_to "Chinese Text Project", "https://ctext.org/", target: '_blank'
+            (Donald Sturgeon)
+          %li
+            = link_to "Corpus-DB", "http://corpus-db.org/", target: '_blank'
+            (Jonathan Reeve)
+          %li
+            = link_to "Freie Universität Berlin", "https://www.geschkult.fu-berlin.de/en/e/kalila-wa-dimna/index.html", target: '_blank'
+            (Beatrice Gründler, Mahmoud Kozae)
+          %li
+            = link_to "Harvard-Yenching Library", "https://library.harvard.edu/libraries/yenching", target: '_blank'
+            (James K.M. Cheng, Sharon Li-Shiuan Yang)
+          %li
+            = link_to "Kanseki Repository", "https://www.kanripo.org/", target: '_blank'
+            (Christian Wittern)
+          /%li
+          /  %strong
+          /    %em
+          /      = link_to "Leiden University", "http://chinese-empires.eu/", target: '_blank'
+          /      (Hilde de Weerdt, Hou Ieong “Brent” Ho)
+          %li
+            %strong
+              %em
+                = link_to "Max Planck Institute for the History of Science", "https://www.mpiwg-berlin.mpg.de/dept-three", target: '_blank'
+                (Dagmar Schäfer, Shih-Pei Chen, Pascal Belouin, Sean Wang)
+          %li
+            = link_to "Pelagios Commons", "http://commons.pelagios.org/", target: '_blank'
+            (Rainer Simon, Rebecca Kahn)
+          %li
+            = link_to "National Taiwan University", "http://thdl.ntu.edu.tw/index.html", target: '_blank'
+            (Jieh Hsiang)
+          %li
+            %strong
+              %em
+                = link_to "Staatsbibliothek zu Berlin ", "https://crossasia.org/en/", target: '_blank'
+                (Matthias Kaun, Martina Siebert, Hou Ieong “Brent” Ho)
+      .col-12.col-md-6
+        %h3= t 'community_content.how_to_get_involved'
+        %ul
+          %li= it 'community_content.bullet_1', catalog_path: It.link(resources_path)
+          %li= it 'community_content.bullet_2', shine_path: It.link(doc_for_developers_pages_path)
+          %li= it 'community_content.bullet_3', github_link: It.link('https://github.com/RISE-MPIWG')
+          %li= it 'community_content.bullet_4', forum_link: It.link('https://groups.google.com/d/forum/rise--shine')
+
+
+
+

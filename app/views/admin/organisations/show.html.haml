@@ -1,0 +1,49 @@
+.panel.panel-default.devise-bs
+  %h4.modal-title.display-3
+    = @organisation
+    = link_to t('action.edit'), edit_organisation_path(@organisation), class: 'float-right'
+  .panel-body
+    %label= Organisation.human_attribute_name :name
+    = @organisation.name
+    %br
+    %label= Organisation.human_attribute_name :slug
+    = @organisation.slug
+    %br
+    %label= Organisation.human_attribute_name :saml_issuer_uri
+    = @organisation.saml_issuer_uri
+
+%h3= User.model_name.human(count: 2)
+%table.table.table-striped
+  %thead
+    %tr
+      %th= Resource.human_attribute_name 'email'
+      %th= Organisation.model_name.human
+      %th= t 'actions'
+
+  %tbody
+    - @organisation.users.each do |user|
+      %tr
+        %td= link_to user, user
+        %td
+          = link_to user.organisation, user.organisation
+        %td
+          = link_to t('action.show'), user
+          = link_to t('action.edit'), edit_user_path(user)
+          = link_to t('action.delete'), user, method: :delete, data: { confirm: 'Are you sure?' }
+
+%h3= Resource.model_name.human(count: 2)
+%table.table.table-striped
+  %thead
+    %tr
+      %th= Resource.human_attribute_name 'name'
+      %th= Resource.human_attribute_name 'uri'
+      %th= Organisation.model_name.human
+      %th= t 'access'
+
+  %tbody
+    - @organisation.resources.each do |resource|
+      %tr
+        %td= link_to resource.name, resource
+        %td= link_to resource.uri, resource.uri, target: '_blank'
+        %td= link_to resource.collection.organisation, resource.collection.organisation
+        %td= display_access_right_to(resource)

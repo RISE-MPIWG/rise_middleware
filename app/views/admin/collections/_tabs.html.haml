@@ -1,0 +1,10 @@
+.container-fluid
+  %ul.nav.nav-pills.justify-content-center.mb-3
+    %li.nav-item
+      = active_link_to t('properties'), edit_admin_collection_path(@collection), class: 'nav-link'
+    %li.nav-item
+      = active_link_to Resource.model_name.human(count: 2), admin_collection_resources_path(@collection), class: 'nav-link'
+    - if @collection.private_access?
+      %li.nav-item
+        = active_link_to t('action.manage_organisation_access'), manage_organisation_access_admin_collection_path(@collection), class: 'nav-link'
+//= active_link_to t('action.manage_research_tool_access'), manage_research_tool_access_admin_collection_path(@collection), wrap_tag: :li, data: { turbolinks: false }

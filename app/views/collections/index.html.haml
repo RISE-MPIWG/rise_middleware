@@ -1,0 +1,8 @@
+- breadcrumb :collections
+= datagrid_form_for @collections_grid, url: collections_path
+- @total_count = @collections_grid.assets.total_count
+.well.well-sm
+  = t 'showing'
+  #{@total_count} #{Collection.model_name.human(count: @total_count)}
+= datagrid_table(@collections_grid)
+= paginate @collections_grid.assets, theme: 'twitter-bootstrap-4'

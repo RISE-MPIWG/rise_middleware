@@ -1,0 +1,93 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Chinese Text Repository API",
+    "version": "0.9",
+    "title": "Chinese Text Repository API",
+    "contact": {
+      "email": "pbelouin@mpiwg-berlin.mpg.de"
+    }
+  },
+  "host": "api.ctext.org",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "tags": [
+    {
+      "name": "titles"
+    }
+  ],
+  "paths": {
+    "/gettexttitles": {
+      "get": {
+        "tags": [
+          "page"
+        ],
+        "summary": "Returns a complete list of top-level textual items (typically books) in the textual database and Wiki.",
+        "description": "Returns a complete list of top-level textual items (typically books) in the textual database and Wiki.",
+        "operationId": "getTextTitles",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TextualItem"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Page not found"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "TextualItem": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "urn": {
+          "type": "string"
+        }
+      }
+    },
+    "ApiResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

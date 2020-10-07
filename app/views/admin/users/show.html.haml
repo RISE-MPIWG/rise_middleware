@@ -1,0 +1,34 @@
+.modal-header
+  %h4.modal-title.display-3
+    = icon 'fas', 'user'
+    = @user
+  %button.close.display-3{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+    %span{"aria-hidden" => "true"} ×
+.modal-body
+  .row
+    .col-md-6
+      %ul.list-unstyled.lead
+        %li
+          = icon 'fas', 'university'
+          = @user.organisation
+        %li
+          = icon 'fas', 'clipboard'
+          = enum_i18n(User, :role, @user.role)
+        %li
+          = icon 'fas', 'envelope'
+          = mail_to @user.email
+    - if @user.name
+      .col-md-6
+        %ul.list-unstyled.lead
+          - if @user.name
+            %li
+              Name:
+              = @user.name
+          - if @user.affiliation
+            %li
+              Affiliation:
+              = @user.affiliation
+          - if @user.position
+            %li
+              Position:
+              = @user.position

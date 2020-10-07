@@ -1,0 +1,284 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require all.css
+ */
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+@import 'rise-bootstrap';
+@import 'pages';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import 'jstree-default';
+@import 'resources';
+
+.swagger {
+  border: 1px solid gray;
+  width: 100%;
+  height: 600px;
+}
+
+@import 'toastr/build/toastr.min';
+
+#toast-container > .toast {
+    background-image: none !important;
+    font-family: "Noto Serif", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 90%;
+    background-color: #ff307a !important;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+#toast-container > .toast:before {
+    position: relative;
+    font-family: 'Font Awesome 5 Pro';
+    font-size: 24px;
+    line-height: 18px;
+    float: left;
+    margin-left: -1em;
+    color: #FFF;
+    padding-right: 0.5em;
+    margin-right: 0.5em;
+}
+
+.metadata-tree {
+  font-size: 120%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+#toast-container > .toast-warning:before {
+    font-family: 'Font Awesome 5 Pro';
+    content: "\f003";
+}
+#toast-container > .toast-error:before {
+    font-family: 'Font Awesome 5 Pro';
+    content: "\f071";
+}
+#toast-container > .toast-info:before {
+    font-family: 'Font Awesome 5 Pro';
+    content: "\f129";
+}
+#toast-container > .toast-success:before {
+    font-family: 'Font Awesome 5 Pro';
+    content: "\f00c";
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .float-right {
+    float: none !important;
+  }
+
+  .tag-container {
+    margin: 10px 0;
+  }
+
+  .col-body {
+    height: auto !important;
+  }
+
+  .preview {
+    height: 200px !important;
+  }
+
+}
+
+.resque {
+  width: 100%;
+  height: 800px;
+  border: none;
+}
+
+.highlight {
+  color: #ff307a;
+}
+
+.modal-content {
+  z-index: 1000000000 !important;
+  padding: 1em;
+  .list-unstyled {
+    margin-bottom: 0em;
+  }
+}
+.form-group {
+  margin-botton: 10px;
+}
+
+.modal-body {
+  padding: 1em;
+}
+
+.no-mr {
+  margin: 0;
+}
+
+.va-center{
+  vertical-align: center;
+}
+
+.panel-buttons {
+  margin: 3em 0;
+  vertical-align: center;
+  p {
+    margin: 0;
+  }
+}
+
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+}
+.col-header {
+  margin-bottom: 1em;
+  min-height: 90px;
+}
+.col-body {
+  background-color: #F3F4F5;
+  padding: 15px;
+  height: 500px;
+  overflow: hidden;
+  overflow-y: scroll;
+  overflow-y: auto;
+  position: relative;
+
+}
+.col-body::-webkit-scrollbar {
+  display: none;
+}
+
+.selected-item {
+  cursor: pointer;
+  display: flex;
+  padding: 4px 8px;
+  margin: 0;
+  transition: background-color .15s;
+  justify-content: space-between;
+}
+.selected-item:hover{
+  background: #eee;
+}
+.selected-item.active {
+  background: #e1e1e1;
+}
+.highlight {
+    background-color: yellow;
+    color: yellow;
+}
+.spinner-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.infinite-scroll {
+  max-height: 100%;
+  overflow-y: scroll;
+  position: absolute;
+  width:auto;
+  padding-left: inherit;
+  padding-right: inherit;
+  left: 0;
+  right: 0;
+  top:0;
+}
+
+.lds-spinner {
+  color: official;
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-spinner div {
+  transform-origin: 32px 32px;
+  animation: lds-spinner 1.2s linear infinite;
+}
+.lds-spinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 29px;
+  width: 5px;
+  height: 14px;
+  border-radius: 20%;
+  background: grey;
+}
+.lds-spinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+.lds-spinner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+.lds-spinner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+.lds-spinner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+.lds-spinner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+.lds-spinner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+.lds-spinner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+.lds-spinner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+.lds-spinner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+.lds-spinner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+.lds-spinner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+.lds-spinner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

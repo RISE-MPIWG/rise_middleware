@@ -1,0 +1,11 @@
+- if grid.html_columns(*options[:columns]).any?
+  = content_tag :table, class: 'table table table-striped table-condensed table-highlight-rows table-layout-fixed' do
+    %thead= datagrid_header(grid, options)
+    %tbody
+      - if assets.any?
+        = datagrid_rows(grid, assets, options)
+      - else
+        %tr
+          %td.noresults{:colspan => "100%"}= I18n.t('datagrid.no_results').html_safe
+- else
+  = I18n.t("datagrid.table.no_columns").html_safe

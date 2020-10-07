@@ -1,0 +1,8 @@
+= simple_form_for(@user, url: [:admin, @user]) do |f|
+  = f.error_notification
+  = f.input :email
+  = f.input :role, include_blank: false
+  .inputs
+
+  .actions
+    = f.button :button, type: :submit, class: 'btn-submit'

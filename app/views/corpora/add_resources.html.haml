@@ -1,0 +1,16 @@
+= render 'corpora/tabs'
+%br
+= datagrid_form_for @resources_grid, url: [:add_resources, @corpus]
+- @total_count = @resources_grid.assets.total_count
+.well.well-sm
+  = t 'showing'
+  %span#total_count
+    #{@total_count} 
+  #{Resource.model_name.human(count: @total_count)}
+= datagrid_table(@resources_grid)
+= paginate @resources_grid.assets, theme: 'twitter-bootstrap-4'
+
+:coffeescript
+  $('select').each ->
+    $(this).change ->
+      $(this).closest('form').trigger 'submit.rails'

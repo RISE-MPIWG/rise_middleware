@@ -1,0 +1,9 @@
+
+Dear <%= @user.email %>
+===============================================
+ 
+The Job you triggered on Rise was succesfully completed
+
+Best Regards,
+
+The Rise Robot

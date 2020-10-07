@@ -1,0 +1,16 @@
+= simple_form_for([:admin, @collection]) do |f|
+  = f.error_notification
+  .panel.panel-primary
+    .panel-heading
+      = t 'general_information'
+    .panel-body
+      .inputs
+        = f.input :name
+        = f.input :slug
+        = f.input :api_url
+        = f.input :original_uuid
+        = f.input :api_mapping_module, include_blank: false
+        = f.input :access_type, include_blank: false
+
+  .actions
+    = f.button :button, type: :submit, class: 'btn-submit'

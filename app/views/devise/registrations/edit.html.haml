@@ -1,0 +1,35 @@
+.container-fluid
+  .row
+    - breadcrumb :my_account, current_user
+    = bootstrap_devise_error_messages!
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'col-12 mt-4' }) do |f|
+      %h3.display-2= t 'edit_account'
+      .form-group
+        = f.email_field :email, autofocus: true, class: 'form-control'
+      /.form-group
+      /  = f.input :preferred_language, label: User.human_attribute_name('preferred_language')
+      /.form-group
+      /= f.association :organisation, include_blank: false, disabled: true, label: false
+      /.form-group
+      /  %label= t 'current_rise_api_token'
+      /  .input-group.margin-bottom-md.api-key
+      /    %input.form-control{type: 'text', value: current_user.auth_token, onclick: 'this.setSelectionRange(0, this.value.length)', readonly: true}
+      /    .input-group-btn
+      /      = medium_icon_link_to '', refresh_api_token_admin_user_path(@current_user), 'sync'
+      / .alert.alert-info
+      /   %p
+      /     = t 'api_key_use_explanation'
+      /   %br
+      /   %pre
+      /     RISE-API-TOKEN: #{current_user.auth_token}
+      .form-group.mt-4
+        = f.label :password
+        %i
+          (#{t('.leave_blank_if_you_don_t_want_to_change_it', default: "leave blank if you don't want to change it")})
+        = f.password_field :password, autocomplete: "off", class: 'form-control'
+      .form-group
+        = f.password_field :password_confirmation, class: 'form-control',placeholder: 'Password Confirmation'   
+      = f.submit t('.update', default: 'Update'), class: 'btn btn-submit'
+  /%p
+  /  = t('.unhappy')
+  /  ? #{link_to t('.cancel_my_account', default: 'Cancel my account'), registration_path(resource_name), data: { confirm: t('.are_you_sure', default: "Are you sure?") }, method: :delete}

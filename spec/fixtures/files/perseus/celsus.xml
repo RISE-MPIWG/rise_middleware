@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contents ref="Perseus:text:1999.02.0141" lang="en">
+  <chunk pos="1" start="2191" end="56975" type="book" n="1" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D1">
+    <head lang="la">
+      <head>Liber I</head>
+    </head>
+    <chunk pos="1" start="2296" end="29234" type="chapter" n="pr" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D1%3Achapter%3Dpr">
+      <head lang="la">
+        <head>Prooemium</head>
+      </head>
+    </chunk>
+    <chunk pos="2" start="29263" end="30894" type="chapter" n="1" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D1%3Achapter%3D1">
+      <head>chapter 1</head>
+    </chunk>
+    <chunk pos="3" start="30904" end="34798" type="chapter" n="2" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D1%3Achapter%3D2">
+      <head>chapter 2</head>
+    </chunk>
+    <chunk pos="4" start="34808" end="47814" type="chapter" n="3" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D1%3Achapter%3D3">
+      <head>chapter 3</head>
+    </chunk>
+    <chunk pos="5" start="47824" end="49840" type="chapter" n="4" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D1%3Achapter%3D4">
+      <head>chapter 4</head>
+    </chunk>
+    <chunk pos="6" start="49850" end="50821" type="chapter" n="5" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D1%3Achapter%3D5">
+      <head>chapter 5</head>
+    </chunk>
+    <chunk pos="7" start="50831" end="51916" type="chapter" n="6" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D1%3Achapter%3D6">
+      <head>chapter 6</head>
+    </chunk>
+    <chunk pos="8" start="51926" end="52357" type="chapter" n="7" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D1%3Achapter%3D7">
+      <head>chapter 7</head>
+    </chunk>
+    <chunk pos="9" start="52367" end="53761" type="chapter" n="8" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D1%3Achapter%3D8">
+      <head>chapter 8</head>
+    </chunk>
+    <chunk pos="10" start="53771" end="55523" type="chapter" n="9" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D1%3Achapter%3D9">
+      <head>chapter 9</head>
+    </chunk>
+    <chunk pos="11" start="55533" end="56964" type="chapter" n="10" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D1%3Achapter%3D10">
+      <head>chapter 10</head>
+    </chunk>
+  </chunk>
+  <chunk pos="2" start="57006" end="152993" type="book" n="2" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2">
+    <head lang="la">
+      <head>Liber II</head>
+    </head>
+    <chunk pos="12" start="57088" end="58067" type="chapter" n="pr" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3Dpr">
+      <head lang="la">
+        <head>PROOEMIUM</head>
+      </head>
+    </chunk>
+    <chunk pos="13" start="58101" end="66135" type="chapter" n="1" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D1">
+      <head>chapter 1</head>
+    </chunk>
+    <chunk pos="14" start="66145" end="68189" type="chapter" n="2" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D2">
+      <head>chapter 2</head>
+    </chunk>
+    <chunk pos="15" start="68199" end="70239" type="chapter" n="3" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D3">
+      <head>chapter 3</head>
+    </chunk>
+    <chunk pos="16" start="70249" end="73503" type="chapter" n="4" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D4">
+      <head>chapter 4</head>
+    </chunk>
+    <chunk pos="17" start="73513" end="74511" type="chapter" n="5" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D5">
+      <head>chapter 5</head>
+    </chunk>
+    <chunk pos="18" start="74521" end="80393" type="chapter" n="6" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D6">
+      <head>chapter 6</head>
+    </chunk>
+    <chunk pos="19" start="80403" end="92174" type="chapter" n="7" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D7">
+      <head>chapter 7</head>
+    </chunk>
+    <chunk pos="20" start="92184" end="107102" type="chapter" n="8" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D8">
+      <head>chapter 8</head>
+    </chunk>
+    <chunk pos="21" start="107112" end="108014" type="chapter" n="9" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D9">
+      <head>chapter 9</head>
+    </chunk>
+    <chunk pos="22" start="108024" end="115455" type="chapter" n="10" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D10">
+      <head>chapter 10</head>
+    </chunk>
+    <chunk pos="23" start="115465" end="117510" type="chapter" n="11" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D11">
+      <head>chapter 11</head>
+    </chunk>
+    <chunk pos="24" start="117520" end="121216" type="chapter" n="12" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D12">
+      <head>chapter 12</head>
+    </chunk>
+    <chunk pos="25" start="121226" end="122306" type="chapter" n="13" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D13">
+      <head>chapter 13</head>
+    </chunk>
+    <chunk pos="26" start="122316" end="126498" type="chapter" n="14" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D14">
+      <head>chapter 14</head>
+    </chunk>
+    <chunk pos="27" start="126508" end="128444" type="chapter" n="15" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D15">
+      <head>chapter 15</head>
+    </chunk>
+    <chunk pos="28" start="128454" end="129486" type="chapter" n="16" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D16">
+      <head>chapter 16</head>
+    </chunk>
+    <chunk pos="29" start="129496" end="133739" type="chapter" n="17" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D17">
+      <head>chapter 17</head>
+    </chunk>
+    <chunk pos="30" start="133749" end="140053" type="chapter" n="18" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D18">
+      <head>chapter 18</head>
+    </chunk>
+    <chunk pos="31" start="140063" end="140863" type="chapter" n="19" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D19">
+      <head>chapter 19</head>
+    </chunk>
+    <chunk pos="32" start="140873" end="141553" type="chapter" n="20" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D20">
+      <head>chapter 20</head>
+    </chunk>
+    <chunk pos="33" start="141563" end="142365" type="chapter" n="21" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D21">
+      <head>chapter 21</head>
+    </chunk>
+    <chunk pos="34" start="142375" end="143062" type="chapter" n="22" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D22">
+      <head>chapter 22</head>
+    </chunk>
+    <chunk pos="35" start="143072" end="143339" type="chapter" n="23" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D23">
+      <head>chapter 23</head>
+    </chunk>
+    <chunk pos="36" start="143349" end="144504" type="chapter" n="24" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D24">
+      <head>chapter 24</head>
+    </chunk>
+    <chunk pos="37" start="144514" end="145202" type="chapter" n="25" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D25">
+      <head>chapter 25</head>
+    </chunk>
+    <chunk pos="38" start="145212" end="145902" type="chapter" n="26" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D26">
+      <head>chapter 26</head>
+    </chunk>
+    <chunk pos="39" start="145912" end="146378" type="chapter" n="27" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D27">
+      <head>chapter 27</head>
+    </chunk>
+    <chunk pos="40" start="146388" end="147162" type="chapter" n="28" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D28">
+      <head>chapter 28</head>
+    </chunk>
+    <chunk pos="41" start="147172" end="148014" type="chapter" n="29" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D29">
+      <head>chapter 29</head>
+    </chunk>
+    <chunk pos="42" start="148024" end="149442" type="chapter" n="30" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D30">
+      <head>chapter 30</head>
+    </chunk>
+    <chunk pos="43" start="149452" end="149940" type="chapter" n="31" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D31">
+      <head>chapter 31</head>
+    </chunk>
+    <chunk pos="44" start="149950" end="150245" type="chapter" n="32" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D32">
+      <head>chapter 32</head>
+    </chunk>
+    <chunk pos="45" start="150255" end="152982" type="chapter" n="33" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D2%3Achapter%3D33">
+      <head>chapter 33</head>
+    </chunk>
+  </chunk>
+  <chunk pos="3" start="153001" end="248223" type="book" n="3" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3">
+    <head lang="la">
+      <head>Liber III</head>
+    </head>
+    <chunk pos="46" start="153090" end="155423" type="chapter" n="1" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D1">
+      <head>chapter 1</head>
+    </chunk>
+    <chunk pos="47" start="155433" end="158814" type="chapter" n="2" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D2">
+      <head>chapter 2</head>
+    </chunk>
+    <chunk pos="48" start="158824" end="161797" type="chapter" n="3" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D3">
+      <head>chapter 3</head>
+    </chunk>
+    <chunk pos="49" start="161807" end="170094" type="chapter" n="4" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D4">
+      <head>chapter 4</head>
+    </chunk>
+    <chunk pos="50" start="170104" end="175751" type="chapter" n="5" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D5">
+      <head>chapter 5</head>
+    </chunk>
+    <chunk pos="51" start="175761" end="183547" type="chapter" n="6" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D6">
+      <head>chapter 6</head>
+    </chunk>
+    <chunk pos="52" start="183557" end="186805" type="chapter" n="7" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D7">
+      <head>chapter 7</head>
+    </chunk>
+    <chunk pos="53" start="186815" end="187522" type="chapter" n="8" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D8">
+      <head>chapter 8</head>
+    </chunk>
+    <chunk pos="54" start="187532" end="189862" type="chapter" n="9" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D9">
+      <head>chapter 9</head>
+    </chunk>
+    <chunk pos="55" start="189872" end="191779" type="chapter" n="10" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D10">
+      <head>chapter 10</head>
+    </chunk>
+    <chunk pos="56" start="191789" end="193132" type="chapter" n="11" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D11">
+      <head>chapter 11</head>
+    </chunk>
+    <chunk pos="57" start="193142" end="195894" type="chapter" n="12" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D12">
+      <head>chapter 12</head>
+    </chunk>
+    <chunk pos="58" start="195904" end="196308" type="chapter" n="13" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D13">
+      <head>chapter 13</head>
+    </chunk>
+    <chunk pos="59" start="196318" end="197693" type="chapter" n="14" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D14">
+      <head>chapter 14</head>
+    </chunk>
+    <chunk pos="60" start="197728" end="200541" type="chapter" n="15" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D15">
+      <head>chapter 15</head>
+    </chunk>
+    <chunk pos="61" start="200551" end="201976" type="chapter" n="16" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D16">
+      <head>chapter 16</head>
+    </chunk>
+    <chunk pos="62" start="201986" end="202448" type="chapter" n="17" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D17">
+      <head>chapter 17</head>
+    </chunk>
+    <chunk pos="63" start="202458" end="212980" type="chapter" n="18" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D18">
+      <head>chapter 18</head>
+    </chunk>
+    <chunk pos="64" start="212990" end="216196" type="chapter" n="19" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D19">
+      <head>chapter 19</head>
+    </chunk>
+    <chunk pos="65" start="216206" end="219000" type="chapter" n="20" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D20">
+      <head>chapter 20</head>
+    </chunk>
+    <chunk pos="66" start="219010" end="227769" type="chapter" n="21" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D21">
+      <head>chapter 21</head>
+    </chunk>
+    <chunk pos="67" start="227804" end="234681" type="chapter" n="22" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D22">
+      <head>chapter 22</head>
+    </chunk>
+    <chunk pos="68" start="234686" end="238799" type="chapter" n="23" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D23">
+      <head>chapter 23</head>
+    </chunk>
+    <chunk pos="69" start="238804" end="241001" type="chapter" n="24" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D24">
+      <head>chapter 24</head>
+    </chunk>
+    <chunk pos="70" start="241011" end="242373" type="chapter" n="25" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D25">
+      <head>chapter 25</head>
+    </chunk>
+    <chunk pos="71" start="242383" end="242840" type="chapter" n="26" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D26">
+      <head>chapter 26</head>
+    </chunk>
+    <chunk pos="72" start="242850" end="248212" type="chapter" n="27" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D3%3Achapter%3D27">
+      <head>chapter 27</head>
+    </chunk>
+  </chunk>
+  <chunk pos="4" start="248255" end="328476" type="book" n="4" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4">
+    <head lang="la">
+      <head>Liber IV</head>
+    </head>
+    <chunk pos="73" start="248363" end="254401" type="chapter" n="1" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D1">
+      <head>chapter 1</head>
+    </chunk>
+    <chunk pos="74" start="254411" end="258699" type="chapter" n="2" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D2">
+      <head>chapter 2</head>
+    </chunk>
+    <chunk pos="75" start="258709" end="259803" type="chapter" n="3" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D3">
+      <head>chapter 3</head>
+    </chunk>
+    <chunk pos="76" start="259813" end="260436" type="chapter" n="4" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D4">
+      <head>chapter 4</head>
+    </chunk>
+    <chunk pos="77" start="260446" end="264125" type="chapter" n="5" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D5">
+      <head>chapter 5</head>
+    </chunk>
+    <chunk pos="78" start="264135" end="267497" type="chapter" n="6" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D6">
+      <head>chapter 6</head>
+    </chunk>
+    <chunk pos="79" start="267507" end="270161" type="chapter" n="7" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D7">
+      <head>chapter 7</head>
+    </chunk>
+    <chunk pos="80" start="270171" end="272496" type="chapter" n="8" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D8">
+      <head>chapter 8</head>
+    </chunk>
+    <chunk pos="81" start="272506" end="274186" type="chapter" n="9" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D9">
+      <head>chapter 9</head>
+    </chunk>
+    <chunk pos="82" start="274196" end="275923" type="chapter" n="10" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D10">
+      <head>chapter 10</head>
+    </chunk>
+    <chunk pos="83" start="275933" end="280349" type="chapter" n="11" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D11">
+      <head>chapter 11</head>
+    </chunk>
+    <chunk pos="84" start="280359" end="285845" type="chapter" n="12" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D12">
+      <head>chapter 12</head>
+    </chunk>
+    <chunk pos="85" start="285855" end="289001" type="chapter" n="13" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D13">
+      <head>chapter 13</head>
+    </chunk>
+    <chunk pos="86" start="289011" end="291387" type="chapter" n="14" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D14">
+      <head>chapter 14</head>
+    </chunk>
+    <chunk pos="87" start="291397" end="293653" type="chapter" n="15" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D15">
+      <head>chapter 15</head>
+    </chunk>
+    <chunk pos="88" start="293663" end="295931" type="chapter" n="16" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D16">
+      <head>chapter 16</head>
+    </chunk>
+    <chunk pos="89" start="295941" end="296973" type="chapter" n="17" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D17">
+      <head>chapter 17</head>
+    </chunk>
+    <chunk pos="90" start="296983" end="299858" type="chapter" n="18" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D18">
+      <head>chapter 18</head>
+    </chunk>
+    <chunk pos="91" start="299894" end="301807" type="chapter" n="19" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D19">
+      <head>chapter 19</head>
+    </chunk>
+    <chunk pos="92" start="301817" end="304240" type="chapter" n="20" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D20">
+      <head>chapter 20</head>
+    </chunk>
+    <chunk pos="93" start="304250" end="305669" type="chapter" n="21" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D21">
+      <head>chapter 21</head>
+    </chunk>
+    <chunk pos="94" start="305679" end="308398" type="chapter" n="22" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D22">
+      <head>chapter 22</head>
+    </chunk>
+    <chunk pos="95" start="308408" end="309950" type="chapter" n="23" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D23">
+      <head>chapter 23</head>
+    </chunk>
+    <chunk pos="96" start="309960" end="311173" type="chapter" n="24" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D24">
+      <head>chapter 24</head>
+    </chunk>
+    <chunk pos="97" start="311183" end="312337" type="chapter" n="25" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D25">
+      <head>chapter 25</head>
+    </chunk>
+    <chunk pos="98" start="312347" end="316703" type="chapter" n="26" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D26">
+      <head>chapter 26</head>
+    </chunk>
+    <chunk pos="99" start="316713" end="320453" type="chapter" n="27" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D27">
+      <head>chapter 27</head>
+    </chunk>
+    <chunk pos="100" start="320463" end="321309" type="chapter" n="28" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D28">
+      <head>chapter 28</head>
+    </chunk>
+    <chunk pos="101" start="321319" end="323051" type="chapter" n="29" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D29">
+      <head>chapter 29</head>
+    </chunk>
+    <chunk pos="102" start="323061" end="323507" type="chapter" n="30" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D30">
+      <head>chapter 30</head>
+    </chunk>
+    <chunk pos="103" start="323517" end="327683" type="chapter" n="31" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D31">
+      <head>chapter 31</head>
+    </chunk>
+    <chunk pos="104" start="327693" end="328465" type="chapter" n="32" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D4%3Achapter%3D32">
+      <head>chapter 32</head>
+    </chunk>
+  </chunk>
+  <chunk pos="5" start="328503" end="456000" type="book" n="5" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5">
+    <head lang="la">
+      <head>Liber V</head>
+    </head>
+    <chunk pos="105" start="328590" end="330149" type="chapter" n="0" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D0">
+      <head>chapter 0</head>
+    </chunk>
+    <chunk pos="106" start="330159" end="330617" type="chapter" n="1" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D1">
+      <head>chapter 1</head>
+    </chunk>
+    <chunk pos="107" start="330627" end="331200" type="chapter" n="2" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D2">
+      <head>chapter 2</head>
+    </chunk>
+    <chunk pos="108" start="331230" end="331486" type="chapter" n="3" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D3">
+      <head>chapter 3</head>
+    </chunk>
+    <chunk pos="109" start="331496" end="331876" type="chapter" n="4" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D4">
+      <head>chapter 4</head>
+    </chunk>
+    <chunk pos="110" start="331886" end="332800" type="chapter" n="5" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D5">
+      <head>chapter 5</head>
+    </chunk>
+    <chunk pos="111" start="332810" end="333563" type="chapter" n="6" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D6">
+      <head>chapter 6</head>
+    </chunk>
+    <chunk pos="112" start="333573" end="334194" type="chapter" n="7" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D7">
+      <head>chapter 7</head>
+    </chunk>
+    <chunk pos="113" start="334204" end="334763" type="chapter" n="8" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D8">
+      <head>chapter 8</head>
+    </chunk>
+    <chunk pos="114" start="334794" end="335061" type="chapter" n="9" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D9">
+      <head>chapter 9</head>
+    </chunk>
+    <chunk pos="115" start="335071" end="335276" type="chapter" n="10" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D10">
+      <head>chapter 10</head>
+    </chunk>
+    <chunk pos="116" start="335286" end="335899" type="chapter" n="11" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D11">
+      <head>chapter 11</head>
+    </chunk>
+    <chunk pos="117" start="335909" end="336265" type="chapter" n="12" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D12">
+      <head>chapter 12</head>
+    </chunk>
+    <chunk pos="118" start="336275" end="336457" type="chapter" n="13" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D13">
+      <head>chapter 13</head>
+    </chunk>
+    <chunk pos="119" start="336467" end="336645" type="chapter" n="14" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D14">
+      <head>chapter 14</head>
+    </chunk>
+    <chunk pos="120" start="336655" end="337266" type="chapter" n="15" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D15">
+      <head>chapter 15</head>
+    </chunk>
+    <chunk pos="121" start="337276" end="337494" type="chapter" n="16" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D16">
+      <head>chapter 16</head>
+    </chunk>
+    <chunk pos="122" start="337504" end="340031" type="chapter" n="17" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D17">
+      <head>chapter 17</head>
+    </chunk>
+    <chunk pos="123" start="340041" end="351454" type="chapter" n="18" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D18">
+      <head>chapter 18</head>
+    </chunk>
+    <chunk pos="124" start="351485" end="360922" type="chapter" n="19" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D19">
+      <head>chapter 19</head>
+    </chunk>
+    <chunk pos="125" start="360932" end="363160" type="chapter" n="20" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D20">
+      <head>chapter 20</head>
+    </chunk>
+    <chunk pos="126" start="363170" end="364693" type="chapter" n="21" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D21">
+      <head>chapter 21</head>
+    </chunk>
+    <chunk pos="127" start="364703" end="368482" type="chapter" n="22" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D22">
+      <head>chapter 22</head>
+    </chunk>
+    <chunk pos="128" start="368492" end="371069" type="chapter" n="23" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D23">
+      <head>chapter 23</head>
+    </chunk>
+    <chunk pos="129" start="371079" end="372535" type="chapter" n="24" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D24">
+      <head>chapter 24</head>
+    </chunk>
+    <chunk pos="130" start="372545" end="377648" type="chapter" n="25" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D25">
+      <head>chapter 25</head>
+    </chunk>
+    <chunk pos="131" start="377658" end="409594" type="chapter" n="26" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D26">
+      <head>chapter 26</head>
+    </chunk>
+    <chunk pos="132" start="409604" end="420084" type="chapter" n="27" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D27">
+      <head>chapter 27</head>
+    </chunk>
+    <chunk pos="133" start="420094" end="455989" type="chapter" n="28" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D5%3Achapter%3D28">
+      <head>chapter 28</head>
+    </chunk>
+  </chunk>
+  <chunk pos="6" start="456029" end="536740" type="book" n="6" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D6">
+    <head lang="la">
+      <head>Liber VI</head>
+    </head>
+    <chunk pos="134" start="456117" end="456681" type="chapter" n="1" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D6%3Achapter%3D1">
+      <head>chapter 1</head>
+    </chunk>
+    <chunk pos="135" start="456691" end="457835" type="chapter" n="2" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D6%3Achapter%3D2">
+      <head>chapter 2</head>
+    </chunk>
+    <chunk pos="136" start="457845" end="458601" type="chapter" n="3" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D6%3Achapter%3D3">
+      <head>chapter 3</head>
+    </chunk>
+    <chunk pos="137" start="458611" end="459873" type="chapter" n="4" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D6%3Achapter%3D4">
+      <head>chapter 4</head>
+    </chunk>
+    <chunk pos="138" start="459883" end="461343" type="chapter" n="5" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D6%3Achapter%3D5">
+      <head>chapter 5</head>
+    </chunk>
+    <chunk pos="139" start="461353" end="491124" type="chapter" n="6" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D6%3Achapter%3D6">
+      <head>chapter 6</head>
+    </chunk>
+    <chunk pos="140" start="491134" end="502040" type="chapter" n="7" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D6%3Achapter%3D7">
+      <head>chapter 7</head>
+    </chunk>
+    <chunk pos="141" start="502050" end="504733" type="chapter" n="8" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D6%3Achapter%3D8">
+      <head>chapter 8</head>
+    </chunk>
+    <chunk pos="142" start="504738" end="508631" type="chapter" n="9" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D6%3Achapter%3D9">
+      <head>chapter 9</head>
+    </chunk>
+    <chunk pos="143" start="508641" end="510630" type="chapter" n="10" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D6%3Achapter%3D10">
+      <head>chapter 10</head>
+    </chunk>
+    <chunk pos="144" start="510640" end="513601" type="chapter" n="11" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D6%3Achapter%3D11">
+      <head>chapter 11</head>
+    </chunk>
+    <chunk pos="145" start="513611" end="513999" type="chapter" n="12" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D6%3Achapter%3D12">
+      <head>chapter 12</head>
+    </chunk>
+    <chunk pos="146" start="514009" end="516054" type="chapter" n="13" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D6%3Achapter%3D13">
+      <head>chapter 13</head>
+    </chunk>
+    <chunk pos="147" start="516086" end="517364" type="chapter" n="14" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D6%3Achapter%3D14">
+      <head>chapter 14</head>
+    </chunk>
+    <chunk pos="148" start="517374" end="519505" type="chapter" n="15" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D6%3Achapter%3D15">
+      <head>chapter 15</head>
+    </chunk>
+    <chunk pos="149" start="519515" end="520091" type="chapter" n="16" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D6%3Achapter%3D16">
+      <head>chapter 16</head>
+    </chunk>
+    <chunk pos="150" start="520101" end="520626" type="chapter" n="17" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D6%3Achapter%3D17">
+      <head>chapter 17</head>
+    </chunk>
+    <chunk pos="151" start="520658" end="534977" type="chapter" n="18" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D6%3Achapter%3D18">
+      <head>chapter 18</head>
+    </chunk>
+    <chunk pos="152" start="534987" end="536729" type="chapter" n="19" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D6%3Achapter%3D19">
+      <head>chapter 19</head>
+    </chunk>
+  </chunk>
+  <chunk pos="7" start="536769" end="661327" type="book" n="7" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7">
+    <head lang="la">
+      <head>Liber VII</head>
+    </head>
+    <chunk pos="153" start="536853" end="539664" type="chapter" n="pr" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3Dpr">
+      <head lang="la">
+        <head>PROOEMIUM</head>
+      </head>
+    </chunk>
+    <chunk pos="154" start="539674" end="540371" type="chapter" n="1" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D1">
+      <head>chapter 1</head>
+    </chunk>
+    <chunk pos="155" start="540381" end="544404" type="chapter" n="2" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D2">
+      <head>chapter 2</head>
+    </chunk>
+    <chunk pos="156" start="544414" end="546266" type="chapter" n="3" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D3">
+      <head>chapter 3</head>
+    </chunk>
+    <chunk pos="157" start="546276" end="551420" type="chapter" n="4" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D4">
+      <head>chapter 4</head>
+    </chunk>
+    <chunk pos="158" start="551430" end="556732" type="chapter" n="5" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D5">
+      <head>chapter 5</head>
+    </chunk>
+    <chunk pos="159" start="556742" end="558977" type="chapter" n="6" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D6">
+      <head>chapter 6</head>
+    </chunk>
+    <chunk pos="160" start="558987" end="581942" type="chapter" n="7" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D7">
+      <head>chapter 7</head>
+    </chunk>
+    <chunk pos="161" start="581952" end="583713" type="chapter" n="8" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D8">
+      <head>chapter 8</head>
+    </chunk>
+    <chunk pos="162" start="583740" end="586433" type="chapter" n="9" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D9">
+      <head>chapter 9</head>
+    </chunk>
+    <chunk pos="163" start="586443" end="587210" type="chapter" n="10" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D10">
+      <head>chapter 10</head>
+    </chunk>
+    <chunk pos="164" start="587220" end="588099" type="chapter" n="11" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D11">
+      <head>chapter 11</head>
+    </chunk>
+    <chunk pos="165" start="588109" end="593576" type="chapter" n="12" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D12">
+      <head>chapter 12</head>
+    </chunk>
+    <chunk pos="166" start="593586" end="594680" type="chapter" n="13" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D13">
+      <head>chapter 13</head>
+    </chunk>
+    <chunk pos="167" start="594690" end="598546" type="chapter" n="14" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D14">
+      <head>chapter 14</head>
+    </chunk>
+    <chunk pos="168" start="598556" end="600078" type="chapter" n="15" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D15">
+      <head>chapter 15</head>
+    </chunk>
+    <chunk pos="169" start="600088" end="602936" type="chapter" n="16" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D16">
+      <head>chapter 16</head>
+    </chunk>
+    <chunk pos="170" start="602946" end="604566" type="chapter" n="17" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D17">
+      <head>chapter 17</head>
+    </chunk>
+    <chunk pos="171" start="604576" end="610349" type="chapter" n="18" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D18">
+      <head>chapter 18</head>
+    </chunk>
+    <chunk pos="172" start="610359" end="616659" type="chapter" n="19" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D19">
+      <head>chapter 19</head>
+    </chunk>
+    <chunk pos="173" start="616669" end="619720" type="chapter" n="20" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D20">
+      <head>chapter 20</head>
+    </chunk>
+    <chunk pos="174" start="619730" end="621601" type="chapter" n="21" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D21">
+      <head>chapter 21</head>
+    </chunk>
+    <chunk pos="175" start="621611" end="624132" type="chapter" n="22" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D22">
+      <head>chapter 22</head>
+    </chunk>
+    <chunk pos="176" start="624142" end="624811" type="chapter" n="23" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D23">
+      <head>chapter 23</head>
+    </chunk>
+    <chunk pos="177" start="624821" end="625292" type="chapter" n="24" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D24">
+      <head>chapter 24</head>
+    </chunk>
+    <chunk pos="178" start="625302" end="628407" type="chapter" n="25" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D25">
+      <head>chapter 25</head>
+    </chunk>
+    <chunk pos="179" start="628417" end="644035" type="chapter" n="26" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D26">
+      <head>chapter 26</head>
+    </chunk>
+    <chunk pos="180" start="644045" end="648307" type="chapter" n="27" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D27">
+      <head>chapter 27</head>
+    </chunk>
+    <chunk pos="181" start="648317" end="649559" type="chapter" n="28" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D28">
+      <head>chapter 28</head>
+    </chunk>
+    <chunk pos="182" start="649569" end="654499" type="chapter" n="29" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D29">
+      <head>chapter 29</head>
+    </chunk>
+    <chunk pos="183" start="654509" end="657758" type="chapter" n="30" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D30">
+      <head>chapter 30</head>
+    </chunk>
+    <chunk pos="184" start="657768" end="659326" type="chapter" n="31" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D31">
+      <head>chapter 31</head>
+    </chunk>
+    <chunk pos="185" start="659336" end="660095" type="chapter" n="32" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D32">
+      <head>chapter 32</head>
+    </chunk>
+    <chunk pos="186" start="660105" end="661316" type="chapter" n="33" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D7%3Achapter%3D33">
+      <head>chapter 33</head>
+    </chunk>
+  </chunk>
+  <chunk pos="8" start="661356" end="742229" type="book" n="8" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8">
+    <head lang="la">
+      <head>Liber VIII</head>
+    </head>
+    <chunk pos="187" start="661446" end="674069" type="chapter" n="1" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D1">
+      <head>chapter 1</head>
+    </chunk>
+    <chunk pos="188" start="674079" end="677165" type="chapter" n="2" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D2">
+      <head>chapter 2</head>
+    </chunk>
+    <chunk pos="189" start="677175" end="682447" type="chapter" n="3" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D3">
+      <head>chapter 3</head>
+    </chunk>
+    <chunk pos="190" start="682457" end="693141" type="chapter" n="4" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D4">
+      <head>chapter 4</head>
+    </chunk>
+    <chunk pos="191" start="693151" end="695853" type="chapter" n="5" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D5">
+      <head>chapter 5</head>
+    </chunk>
+    <chunk pos="192" start="695880" end="696997" type="chapter" n="6" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D6">
+      <head>chapter 6</head>
+    </chunk>
+    <chunk pos="193" start="697007" end="699618" type="chapter" n="7" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D7">
+      <head>chapter 7</head>
+    </chunk>
+    <chunk pos="194" start="699628" end="702240" type="chapter" n="8" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D8">
+      <head>chapter 8</head>
+    </chunk>
+    <chunk pos="195" start="702250" end="706292" type="chapter" n="9" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D9">
+      <head>chapter 9</head>
+    </chunk>
+    <chunk pos="196" start="706302" end="721335" type="chapter" n="10" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D10">
+      <head>chapter 10</head>
+    </chunk>
+    <chunk pos="197" start="721367" end="724942" type="chapter" n="11" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D11">
+      <head>chapter 11</head>
+    </chunk>
+    <chunk pos="198" start="724952" end="726447" type="chapter" n="12" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D12">
+      <head>chapter 12</head>
+    </chunk>
+    <chunk pos="199" start="726457" end="727120" type="chapter" n="13" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D13">
+      <head>chapter 13</head>
+    </chunk>
+    <chunk pos="200" start="727130" end="728522" type="chapter" n="14" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D14">
+      <head>chapter 14</head>
+    </chunk>
+    <chunk pos="201" start="728532" end="731464" type="chapter" n="15" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D15">
+      <head>chapter 15</head>
+    </chunk>
+    <chunk pos="202" start="731474" end="733428" type="chapter" n="16" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D16">
+      <head>chapter 16</head>
+    </chunk>
+    <chunk pos="203" start="733438" end="734335" type="chapter" n="17" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D17">
+      <head>chapter 17</head>
+    </chunk>
+    <chunk pos="204" start="734345" end="734783" type="chapter" n="18" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D18">
+      <head>chapter 18</head>
+    </chunk>
+    <chunk pos="205" start="734793" end="735233" type="chapter" n="19" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D19">
+      <head>chapter 19</head>
+    </chunk>
+    <chunk pos="206" start="735243" end="738370" type="chapter" n="20" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D20">
+      <head>chapter 20</head>
+    </chunk>
+    <chunk pos="207" start="738380" end="739106" type="chapter" n="21" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D21">
+      <head>chapter 21</head>
+    </chunk>
+    <chunk pos="208" start="739116" end="739870" type="chapter" n="22" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D22">
+      <head>chapter 22</head>
+    </chunk>
+    <chunk pos="209" start="739880" end="740251" type="chapter" n="23" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D23">
+      <head>chapter 23</head>
+    </chunk>
+    <chunk pos="210" start="740261" end="740524" type="chapter" n="24" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D24">
+      <head>chapter 24</head>
+    </chunk>
+    <chunk pos="211" start="740534" end="742218" type="chapter" n="25" ref="Perseus%3Atext%3A1999.02.0141%3Abook%3D8%3Achapter%3D25">
+      <head>chapter 25</head>
+    </chunk>
+  </chunk>
+</contents>

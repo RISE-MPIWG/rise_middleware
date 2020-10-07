@@ -1,0 +1,15 @@
+.content__section--intro
+  .container-fluid.col-md-8
+    %h3.display-2= t('.sign_in', default: 'Sign in')
+    = form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form' }) do |f|
+      .form-group
+        = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email'
+      .form-group
+        = f.password_field :password, autocomplete: 'off', class: 'form-control', placeholder: 'Password'
+      - if devise_mapping.rememberable?
+        .checkbox
+          = f.label User.human_attribute_name('remember_me') do
+            = f.check_box :remember_me
+            = t(User.human_attribute_name('remember_me'), default: User.human_attribute_name('remember_me'))
+      = f.submit  t('.sign_in', default: 'Sign in'), class: 'btn btn-primary mt-2'
+    = render 'devise/shared/links'

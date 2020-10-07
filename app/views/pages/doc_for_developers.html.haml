@@ -1,0 +1,13 @@
+= render 'pages/doc_tabs'
+.container-fluid
+  - if @current_user
+    %p= t 'current_rise_api_token'
+    .row
+      .col-md-6
+        %input.form-control{type: 'text', value: current_user.auth_token, onclick: 'this.setSelectionRange(0, this.value.length)', readonly: true}
+  %p
+    = t 'api_help_text'
+
+
+  .clearfix.mt-6
+  %iframe#swagger.swagger{ src: 'https://rise.mpiwg-berlin.mpg.de/swagger/'}

@@ -1,0 +1,9 @@
+= simple_form_for([:admin, @resource]) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :name
+    = f.input :uri
+
+  .actions
+    = f.button :button, type: :submit, class: 'btn-submit'

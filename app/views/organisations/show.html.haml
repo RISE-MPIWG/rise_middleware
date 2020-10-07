@@ -1,0 +1,23 @@
+.modal-header
+  %h4.modal-title.display-3
+    = icon 'fas', 'university'
+    = @organisation
+  %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+    %span{"aria-hidden" => "true"} ×
+.modal-body
+  %ul.list-unstyled.lead
+    %li
+      = icon 'fas', 'books'
+      - count = @organisation.collections.count
+      = @organisation.collections.count
+      = Collection.model_name.human(count: count)
+    %li
+      = icon 'fas', 'book'
+      - count = @organisation.resources.count
+      = @organisation.resources.count
+      = Resource.model_name.human(count: count)
+    %li
+      = icon 'fas', 'user'
+      - count = @organisation.users.count
+      = count
+      = User.model_name.human(count: count)

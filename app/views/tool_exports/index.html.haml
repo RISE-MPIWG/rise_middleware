@@ -1,0 +1,8 @@
+= datagrid_form_for @tool_exports_grid, url: tool_exports_path
+- @total_count = @tool_exports_grid.assets.total_count
+.well.well-sm
+  = t 'showing'
+  #{@total_count} #{ToolExport.model_name.human(count: @total_count)}
+  //= icon_link_to t('action.new', model: ToolExport.model_name.human), new_tool_export_path, 'plus', class: 'float-right'
+= datagrid_table(@tool_exports_grid)
+= paginate @tool_exports_grid.assets, theme: 'twitter-bootstrap-4'

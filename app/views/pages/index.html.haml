@@ -1,0 +1,150 @@
+.content__section--intro.home__section.home-intro.page-home
+  .container-fluid
+    .jumbotron.jumbotron-flush.home-intro__jumbotron
+      .home-intro__slider-container
+        .row
+          .col-10.offset-1.col-sm-6.offset-sm-3.col-md-5.offset-md-6
+            .home-intro__slider-wrapper
+              .home-intro__slider
+                = image_tag 'home-slider-00.jpg', class: 'home-intro__slider-image active'
+                = image_tag 'home-slider-01.jpg', class: 'home-intro__slider-image'
+                = image_tag 'home-slider-02.jpg', class: 'home-intro__slider-image'
+                = image_tag 'home-slider-03.jpg', class: 'home-intro__slider-image'
+      .home-intro__hl-container
+        .row
+          .col-12.col-sm-9.col-md-8
+            %h1.display-1.home-intro__hl Standard for secure resource exchange and interoperability
+    .row.home-intro__button-row
+      .col-12.col-md-6.col-lg-12
+        %a.btn.btn-cta.home-intro__button{:href => "/users/sign_up"} Get started
+        %a.btn.home-intro__button{:href => "/pages/about"} Learn more
+    .row
+      .col.col-md-8.col-lg-6
+        %p.lead
+          RISE Project—Research Infrastructure for the Study of Eurasia—is a digital research infrastructure developed by the Max Planck Institute for the History of Science. It is a pioneering approach for resource dissemination and emerging data analytics in the humanities. Its various technical components facilitate the secure linkage between third-party research tools and various third-party textual collections (both licensed and open-access ones) via a standard API called <a href='/pages/doc_for_developers'>SHINE</a>.
+.home-get-started.home__section
+  .container-fluid
+    .row
+      .col-12.col-md-4.home-get-started__col
+        %h3
+          %small Get started
+          For Resource Providers
+        %p
+          Reach more users, connect easily to research tools and facilitate resource exchange securely!
+          Implement SHINE-compatible API endpoints to manage access to your resources and to make them available via the RISE Catalog.
+          Use the RISE-RP Toolkit to host and publish the resources that you want to share via SHINE.
+        %ul.list-unstyled
+          %li
+            %a.link-with-arrow{:href => "/pages/doc_for_developers"} See the SHINE documentation
+          %li
+            %a.link-with-arrow{:href => "https://github.com/RISE-MPIWG", target: '_blank'} Grab the RP Toolkit
+      .col-12.col-md-4.home-get-started__col
+        %h3
+          %small Get started
+          For Research Tool Developers
+        %p
+          Connect easily to resource repositories and make data import painless for your users!
+          Implement SHINE-compatible API endpoints to securely consume resources available via the RISE Catalog.
+          Use the RISE-JS Toolkit to allow users to browse and import SHINE-compatible resources directly in your tool's user interface.
+        %ul.list-unstyled
+          %li
+            %a.link-with-arrow{:href => "/pages/doc_for_developers"} See the SHINE documentation
+          %li
+            %a.link-with-arrow{:href => "https://github.com/RISE-MPIWG", target: '_blank'} Grab the JS Toolkit
+          %li
+            %a.link-with-arrow{:href => "/resources"} Browse the RISE Catalog
+      .col-12.col-md-4.home-get-started__col
+        %h3
+          %small Get started
+          For Research Institutes
+        %p
+          Gain unprecedented access to textual resources in a machine-readable format, so that they can be analyzed in research tools in a seamless and legal research workflow! Please sign up and visit the RISE Catalog to view the resources you have access to based on your affiliation.
+        %ul.list-unstyled
+          %li
+            %a.link-with-arrow{:href => "/resources"} Browse the RISE Catalog
+.home-modules.home__section
+  .container-fluid
+    %h2.display-1 Modules
+    .jumbotron
+      = image_tag 'modules-overview-small.svg', class: 'home-modules__infographic show-sm-lte', alt: "RISE and SHINE modules"
+      = image_tag 'modules-overview.svg', class: 'home-modules__infographic show-md', alt: "RISE and SHINE modules"
+.home-figures.home__section
+  .container-fluid
+    %h2.display-1 What you can expect
+    .row
+      .col-12.col-md-4.text-center
+        .home-figures__container
+          .home-figures__figure-wrapper.h3
+            .home-figures__figure= number_with_delimiter Resource.count
+            .home-figures__text Resources
+          %svg.home-figures__svg{:height => "304", :version => "1.1", :viewbox => "0 0 304 304", :width => "304", :xmlns => "http://www.w3.org/2000/svg"}
+            %circle.home-figures__circle.home-figures__circle-1{:cx => "152", :cy => "152", :r => "150", "stroke-width" => "4"}
+      .col-12.col-md-4.text-center
+        .home-figures__container
+          .home-figures__figure-wrapper.h3
+            .home-figures__figure= Metadatable::LANGUAGES.size
+            .home-figures__text Languages
+          %svg.home-figures__svg{:height => "304", :version => "1.1", :viewbox => "0 0 304 304", :width => "304", :xmlns => "http://www.w3.org/2000/svg"}
+            %circle.home-figures__circle.home-figures__circle-2{:cx => "152", :cy => "152", :r => "150", "stroke-width" => "4"}
+      .col-12.col-md-4.text-center
+        .home-figures__container
+          .home-figures__figure-wrapper.h3
+            .home-figures__figure= Organisation.count
+            .home-figures__text Partners
+          %svg.home-figures__svg{:height => "304", :version => "1.1", :viewbox => "0 0 304 304", :width => "304", :xmlns => "http://www.w3.org/2000/svg"}
+            %circle.home-figures__circle.home-figures__circle-3{:cx => "152", :cy => "152", :r => "150", "stroke-width" => "4"}
+.home-use-cases.home__section
+  .container-fluid
+    %h2.display-1 Use cases
+    .jumbotron.home-use-cases__jumbotron
+      .row.home-use-cases__row
+        .col-8.offset-2.col-sm-4.offset-sm-4.offset-md-1.align-self-center.home-use-cases__img-col
+          .home-use-cases__img-container
+            = image_tag 'case-logart.jpg', class: 'home-use-cases__image active'
+            = image_tag 'case-markus.png', class: 'home-use-cases__image'
+            = image_tag 'case-kanseki.jpg', class: 'home-use-cases__image'
+            = image_tag 'case-arabic-poetry.png', class: 'home-use-cases__image'
+          .home-use-cases__arrow-left
+            %span.icon.icon-arrow-left
+          .home-use-cases__arrow-right
+            %span.icon.icon-arrow-right
+        .col-md-6.align-self-center
+          %ul.list-unstyled.home-use-cases__text-list
+            %li.home-use-cases__text.active
+              %h3 LoGaRT: Local Gazetteers Research Tools
+              %p LoGaRT is a suite of digital tools developed by the Max Planck Institute for the History of Science. Its purposes are to transform texts in Chinese local gazetteers into structured data, to perform systematic analyses, and to visualize research results. LoGaRT uses the SHINE API to ingest local gazetteer texts across multiple resource providers and the RISE middleware to manage user access to those texts from licensed databases.
+            %li.home-use-cases__text
+              %h3 MARKUS
+              %p MARKUS is a tool that can automatically tag personal names, place names, temporal references, and bureaucratic offices in Chinese and Korean texts. After implementing the JS Toolkit, MARKUS users can now browse the RISE Catalog and select resources for analysis directly in MARKUS’s interface, without having to manually prepare the texts and upload them one by one. The RISE middleware also allows analysis on licensed texts, which was previously impossible, in MARKUS.
+            %li.home-use-cases__text
+              %h3 Kanseki Repository
+              %p Kanseki Repository, colloquially known as Kanripo, is a collection of open-access pre-modern Chinese texts stored in GitHub repositories. The RISE middleware mapped SHINE API endpoints with Kanripo’s GitHub repositories, allowing users programmatic access to the texts via SHINE API or in the RISE Catalog in a standardized fashion.
+            %li.home-use-cases__text
+              %h3 Personal collection of Arabic poetry
+              %p Mahmood Kozae, a scholar from Freie Universität Berlin, has a rich collection of Arabic poetry. Using the RP Toolkit, he was able to quickly and easily host it online via the RISE Catalog and make it retrievable to the public via the SHINE API. The RISE middleware also allows him to manage access rights to his collection on a granular level.
+.home-join-community.home__section
+  .container-fluid
+    %h2.display-1 Join the community
+    .row
+      .col-12.col-md-6.home-join-community__form-col
+        %h3 Get in touch!
+        %p Get in touch with your specific collections, tools, or research needs and see how you can benefit from RISE and SHINE! Tell us what you need, and our team will arrange for individual meetings with you for further discussions.
+        = form_for Contact.new do |f|
+          .form-group
+            %label.visually-hidden{:for => "{{TODO scope}}-name"} Name
+            = f.text_field :name, placeholder: 'Name', type: :text, class: 'form-control'
+          .form-group
+            %label.visually-hidden{:for => "{{TODO scope}}-email"} Email address
+            = f.text_field :email, placeholder: 'Email', type: :email, class: 'form-control'
+          .form-group
+            %label.visually-hidden{:for => "{{TODO scope}}-message"} Message
+            = f.text_area :message, placeholder: 'Message', rows: '6', class: 'form-control'
+          %button.btn.home-join-community__submit-btn{:type => "submit"} Submit
+      .col-12.col-md-6
+        %h3 Have questions?
+        %p See who’s already using RISE and SHINE by visiting the ‘Community’ page. Or, check out the discussion forum, where community members interact with one another. You can see how people have used RISE and SHINE and what questions they have had. Join in on the fun by posting your queries there!
+        %div
+          %a.btn.btn-cta.btn-sm{:href => "/pages/community"} Go to ‘Community’ page
+          %br/
+          %br/
+          %a.btn.btn-cta.btn-sm{:href => "https://groups.google.com/d/forum/rise--shine", :target => "_blank"} Exchange ideas

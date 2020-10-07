@@ -1,0 +1,45 @@
+de:
+  activerecord:
+    models:
+      user:
+        one: Benutzer
+        other: Benutzern
+      user_log:
+        one: Benutzeraktivität
+        other: Benutzeraktivitäten
+      resource:
+        one: Ressource
+        other: Ressourcen
+      collection:
+        one: Sammlung
+        other: Sammlungen
+      organisation:
+        one: Organisation
+        other: Organisationen
+      pg_search/document:
+        one: Eingang
+        other: Eingangen
+    attributes:
+      pg_search/document:
+        type: Art
+      user:
+        preferred_language: "Bevorzugte Sprache"
+        role: Rolle
+        roles:
+          super_admin: Super Admin
+          standard_user: Standardbenutzer
+          admin: Admin
+      user_log:
+        created_at: Datum
+        action: Aktion
+        controller: Regler
+        request_origin: Herkunft IP
+      resource:
+        name: Name
+        uri: URI
+      organisation_collection:
+        access_rights:
+          owner: Eigentümer
+          no_access: Kein Zugang
+          read: Lesen
+          mine: Graben

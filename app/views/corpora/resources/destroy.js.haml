@@ -1,0 +1,4 @@
+$("#row_#{@resource.id}").fadeOut('fast')
+$("#total_count").text( Number($("#total_count").text()) - 1 );
+$("#total_overview").text( Number($("#total_overview").text()) - 1 );
+toastr.info("#{@resource.name} #{I18n.t('removed_from_your_corpus')}");

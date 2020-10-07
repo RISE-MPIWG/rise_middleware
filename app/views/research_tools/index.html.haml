@@ -1,0 +1,7 @@
+= datagrid_form_for @research_tools_grid, url: collections_path
+- @total_count = @research_tools_grid.assets.total_count
+.well.well-sm
+  = t 'showing'
+  #{@total_count} #{ResearchTool.model_name.human(count: @total_count)}
+= datagrid_table(@research_tools_grid)
+= paginate @research_tools_grid.assets, theme: 'twitter-bootstrap-4'

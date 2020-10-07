@@ -1,0 +1,8 @@
+.mb-4.clearfix
+  = simple_form_for grid, options do |f|
+    - grid.filters.each do |filter|
+      .datagrid-filter.filter
+        = f.datagrid_filter filter, partials: options[:partials], placeholder: filter.options[:header], class: 'form-control mb-2'
+    .datagrid-actions
+      = f.submit I18n.t("datagrid.form.search").html_safe, :class => "datagrid-submit hidden visually-hidden"
+      -#= link_to I18n.t('datagrid.form.reset').html_safe, url_for(grid.to_param => empty_parameter), :class => "datagrid-reset"

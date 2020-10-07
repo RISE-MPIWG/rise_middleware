@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: utf-8
+  pool: 10
+  username: rise
+  password: risepassword
+  host: postgres
+  port: 5432
+
+development:
+  <<: *default
+  database: rise_development
+
+test:
+  <<: *default
+  database: rise_test
+
+production:
+  <<: *default
+  database: rise_production

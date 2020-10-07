@@ -1,0 +1,171 @@
+host: api.ctext.org
+info:
+  title: Chinese Text Repository API
+  contact:
+    email: pbelouin@mpiwg-berlin.mpg.de
+  version: '0.9'
+  description: Chinese Text Repository API
+tags:
+- name: titles
+schemes:
+- https
+swagger: '2.0'
+basePath: "/"
+paths:
+  "/searchtexts":
+    get:
+      tags:
+      - textSearch
+      summary: Returns a list of items in the textual database and Wiki matching specified parameters.
+      description: Returns a list of items in the textual database and Wiki matching specified parameters.
+      produces:
+      - application/json
+      parameters:
+      - name: title
+        in: query
+        description: Part or all of the text title
+        required: true
+        type: string
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              books:
+                type: array
+                items:
+                  $ref: '#/definitions/TextualItem'      
+  "/getcharacter":
+    get:
+      tags:
+      - character
+      summary: Return basic data about a character
+      description: Return basic data about a character
+      produces:
+      - application/json
+      parameters:
+      - name: char
+        in: query
+        description: character to describe
+        required: true
+        type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/CharacterDescription'
+  "/gettexttitles":
+    get:
+      tags:
+      - page
+      summary: Returns a complete list of top-level textual items (typically books)
+        in the textual database and Wiki.
+      produces:
+      - application/json
+      security:
+      - api_key: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              books:
+                type: array
+                items:
+                  $ref: '#/definitions/TextualItem'
+          description: successful operation
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Page not found
+      description: Returns a complete list of top-level textual items (typically books)
+        in the textual database and Wiki.
+      operationId: getTextTitles
+  "/gettext":
+    get:
+      tags:
+      - page
+      summary: Returns the textual content of a chapter of text.
+      produces:
+      - application/json
+      security:
+      - api_key: []
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/TextObject'
+          description: successful operation
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Page not found
+      description: Returns a complete list of top-level textual items (typically books)
+        in the textual database and Wiki.
+      operationId: getText
+definitions:
+  ApiResponse:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      type:
+        type: string
+      message:
+        type: string
+  TextualItem:
+    type: object
+    properties:
+      urn:
+        type: string
+      title:
+        type: string
+  Subsection:
+    type: object
+    properties:
+      urn:
+        type: string
+  TextObject:
+    type: object
+    properties:
+      title:
+        type: string
+      fulltext:
+        type: string
+        items:
+          type: string
+      subsections:
+        type: array
+        items:
+          $ref: '#/definitions/Subsection'
+  CharacterDescription:
+    type: object
+    properties:
+      char: 
+        type: string
+      radical:
+        type: string
+      radicalstrokes:
+        type: integer
+      readings:
+        type: array
+        items:
+          type: object
+          properties:
+            cantonese:
+              type: string
+            mandarinpinyin:
+              type: string
+            mandarinzhuyin:
+              type: string
+            tang:
+              type: string
+      totalstrokes:
+        type: integer
+      url:
+        type: string
+securityDefinitions:
+  api_key:
+    in: header
+    name: api_key
+    type: apiKey

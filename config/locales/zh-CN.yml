@@ -1,0 +1,39 @@
+zh-CN:
+  front_end:
+    browser:
+      title: Browser the catalog
+      placeholder: Enter a title for search
+    selections:
+      title: Selected resources
+      undertitle: No items selected. Please select resources from catalog.
+      open: Open 
+      selected_resources: selected resources with
+    preview:
+      title: Preview
+      undertitle: Click on selected resource to load preview.
+      placeholder: Enter a word for search
+    permission:
+      message: You don't have access to this resource. Please contact us if you think you should be able to access it.
+  general_information: General Information
+  api_documentation: API Documentation
+  search: 查詢
+  sign_out: 登出
+  welcome_to_rise: 歡迎來到 Asia Network
+  you_are_logged_in_as: 您目前以這個身分登入
+  access: 權限
+  properties: Properties (I'm not sure how to translate it. Need to see it in context.)
+  actions: 功能 (Not sure if this is good.)
+  admin: 管理者
+  owner: 擁有者
+  are_you_sure: 你確定嗎？
+  action:
+    remove: 移除
+    show: 顯示
+    edit: 編輯
+    delete: 刪除
+    archive: 封存
+    new: "New %{model}"
+    add: "Add %{model}"
+    manage_access: 權限管理
+  search_for_a: "Search for a %{model}"
+

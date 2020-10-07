@@ -1,0 +1,8 @@
+= datagrid_form_for @corpora_grid, url: corpora_path
+- @total_count = @corpora_grid.assets.total_count
+.well.well-sm
+  = t 'showing'
+  #{@total_count} #{Corpus.model_name.human(count: @total_count)}
+  = icon_link_to t('action.new', model: Corpus.model_name.human), new_corpus_path, 'plus', class: 'float-right'
+= datagrid_table(@corpora_grid)
+= paginate @corpora_grid.assets, theme: 'twitter-bootstrap-4'

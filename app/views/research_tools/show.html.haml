@@ -1,0 +1,13 @@
+.modal-header
+  %h4.modal-title.display-3
+    = icon 'fas', 'wrench'
+    = @research_tool
+  %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+    %span{"aria-hidden" => "true"} ×
+.modal-body
+  %ul.list-unstyled.lead
+    %li
+      = @research_tool.description
+    %li
+      = icon 'fas', 'link'
+      = link_to @research_tool.url, @research_tool.url, target: '_blank'

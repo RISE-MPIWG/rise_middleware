@@ -1,0 +1,66 @@
+en:
+  activerecord:
+    models:
+      user:
+        one: User
+        other: Users
+      user_log:
+        one: User activity
+        other: User activities
+      resource:
+        one: Resource
+        other: Resources
+      collection:
+        one: Collection
+        other: Collections
+      organisation:
+        one: Organisation
+        other: Organisations
+      pg_search/document:
+        one: Entry
+        other: Entries
+      research_tool:
+        one: Research Tool
+        other: Research Tools
+      corpus:
+        one: Corpus
+        other: Corpora
+      tool_export:
+        one: Research Tool Export
+        other: Research Tool Exports
+    attributes:
+      pg_search/document:
+        type: Type
+      user:
+        preferred_language: "Preferred Language"
+        role: Role
+        roles:
+          super_admin: Super Admin
+          standard_user: Standard User
+          admin: Admin
+      user_log:
+        created_at: Date
+        action: Action
+        controller: Controller
+        request_origin: Origin IP
+      resource:
+        name: Name
+        uri: URI
+      research_tool:
+        name: Name
+      organisation_collection:
+        access_rights:
+          owner: Owner
+          no_access: No Access
+          public_access: Public
+          read: Read
+          mine: Mine
+      research_tool_collection:
+        access_rights:
+          no_access: No Access
+          read: Read
+          mine: Mine
+      organisation_research_tool:
+        access_rights:
+          enabled: Enabled
+          disabled: Disabled

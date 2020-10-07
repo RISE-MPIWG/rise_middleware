@@ -1,0 +1,36 @@
+{
+   "books" : [
+      {
+         "title" : "墨子",
+         "urn" : "ctp:mozi"
+      },
+      {
+         "title" : "論語",
+         "urn" : "ctp:analects"
+      },
+      {
+         "title" : "孟子",
+         "urn" : "ctp:mengzi"
+      },
+      {
+         "title" : "韓非子",
+         "urn" : "ctp:hanfeizi"
+      },
+      {
+         "title" : "莊子",
+         "urn" : "ctp:zhuangzi"
+      },
+      {
+         "title" : "淮南子",
+         "urn" : "ctp:huainanzi"
+      },
+      {
+         "title" : "史記",
+         "urn" : "ctp:shiji"
+      },
+      {
+         "title" : "禮記",
+         "urn" : "ctp:liji"
+      }
+    ]
+  }

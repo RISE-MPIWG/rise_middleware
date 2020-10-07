@@ -1,0 +1,8 @@
+= simple_form_for([:admin, @research_tool]) do |f|
+  = f.error_notification
+  = f.input :name
+  = f.input :description
+  = f.input :slug
+  = f.input :url
+  .actions
+    = f.button :button, type: :submit, class: 'btn-submit'

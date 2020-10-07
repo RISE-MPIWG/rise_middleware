@@ -1,0 +1,411 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "SHINE Resource Provider API",
+    "version": "v1",
+    "description": "This is the minimum set of endpoints required by this RISE instance to connect to a Resource Provider that wishes to make their catalog available through SHINE.",
+    "contact": {
+      "name": "Pascal Belouin",
+      "email": "pbelouin@mpiwg-berlin.mpg.de"
+    }
+  },
+  "host": "resource-provider-api-url",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/api/collections/{uuid}/resources": {
+      "get": {
+        "summary": "Get the list of all resources for a collection",
+        "tags": [
+          {
+            "name": "Collections",
+            "description": "Collection Routes"
+          },
+          {
+            "name": "Resources",
+            "description": "Resource Routes"
+          },
+          {
+            "name": "Sections",
+            "description": "Section Routes"
+          },
+          {
+            "name": "Content Units",
+            "description": "Content Unit Routes"
+          },
+          {
+            "name": "Corpora",
+            "description": "Corpus Routes"
+          },
+          {
+            "name": "ResearchTools",
+            "description": "Research Tool Routes"
+          },
+          {
+            "name": "ToolExports",
+            "description": "Tool Export Routes"
+          },
+          {
+            "name": "Sessions",
+            "description": "Authentication Routes"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "type": "string",
+            "description": "The UUID of the Collection you wish to access",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/resource"
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "uuid": "fbbdaf5b-6d5b-4d0e-9cef-ec3aca617162",
+                  "name": "A Monstrous Regiment of Women"
+                },
+                {
+                  "uuid": "debf1539-53c1-4bfa-99e8-26213fec56d1",
+                  "name": "Many Waters"
+                }
+              ]
+            }
+          },
+          "401": {
+            "description": "unauthorised access to this resource's collection"
+          },
+          "404": {
+            "description": "Collection not found"
+          }
+        }
+      }
+    },
+    "/api/collections": {
+      "get": {
+        "summary": "Get the list of all collections the current user has access to",
+        "tags": [
+          "Collections"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/collection"
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "uuid": "1cdfc71d-cd0b-49c0-96a4-147d82bf05da",
+                  "name": "Minna von Barnhelm",
+                  "resourceCount": 1400
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/api/resources/{uuid}/sections": {
+      "get": {
+        "summary": "Get the list of all sections for a resource",
+        "tags": [
+          "Resources"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "type": "string",
+            "description": "The UUID of the Resource you wish to access",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/section"
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "uuid": "8e61573c-c1b4-4ddd-99bb-2997bd725f1b",
+                  "name": "Lilies of the Field",
+                  "parentUuid": null,
+                  "uri": "http://gottliebkiehn.com/delia",
+                  "contentUnitCount": 2
+                },
+                {
+                  "uuid": "87850f35-3d87-4702-b290-214892000aa6",
+                  "name": "Eyeless in Gaza",
+                  "parentUuid": null,
+                  "uri": "http://borergreenholt.name/shannon.lebsack",
+                  "contentUnitCount": 6
+                },
+                {
+                  "uuid": "d05e7d00-f94d-429c-a652-31abc426994e",
+                  "name": "The Road Less Traveled",
+                  "parentUuid": null,
+                  "uri": "http://cruickshankemard.org/helmer",
+                  "contentUnitCount": 2
+                },
+                {
+                  "uuid": "cf796b5a-2497-4b8d-81fe-98ed891af23c",
+                  "name": "A Handful of Dust",
+                  "parentUuid": null,
+                  "uri": "http://nikolausdurgan.io/bria",
+                  "contentUnitCount": 10
+                },
+                {
+                  "uuid": "43b5525c-d33e-4749-baa0-1b35c4cdf258",
+                  "name": "Recalled to Life",
+                  "parentUuid": null,
+                  "uri": "http://mayerferry.name/delilah",
+                  "contentUnitCount": 12
+                },
+                {
+                  "uuid": "f071b6ff-72a3-49e3-81e2-28f00f42ee1f",
+                  "name": "That Good Night",
+                  "parentUuid": null,
+                  "uri": "http://herman.name/monique",
+                  "contentUnitCount": 13
+                }
+              ]
+            }
+          },
+          "401": {
+            "description": "unauthorised access to this resource"
+          },
+          "404": {
+            "description": "resource not found"
+          }
+        }
+      }
+    },
+    "/api/resources/{uuid}/metadata": {
+      "get": {
+        "summary": "[OPTIONAL] Returns a json object containing a resource's metadata",
+        "tags": [
+          "Resources"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "type": "string",
+            "description": "The UUID of the Resource you wish to access",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/metadata"
+            }
+          },
+          "401": {
+            "description": "unauthorised access to this resource"
+          },
+          "404": {
+            "description": "resource not found"
+          }
+        }
+      }
+    },
+    "/api/sections/{uuid}/content_units": {
+      "get": {
+        "summary": "Get the list of all content units for a section",
+        "tags": [
+          "Sections"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "apiToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "type": "string",
+            "description": "The UUID of the section you wish to access",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/content_unit"
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "uuid": "9c3def3e-0a90-49ce-a006-b80431b082f4",
+                  "name": "Eyeless in Gaza",
+                  "content": "別集類三{{宋}}提要"
+                },
+                {
+                  "uuid": "aa1dd506-587c-4459-9de4-972bf5e13dae",
+                  "name": "Great Work of Time",
+                  "content": "別集類三{{宋}}提要"
+                },
+                {
+                  "uuid": "8534e005-9722-470a-b1e2-5fc16637e85e",
+                  "name": "As I Lay Dying",
+                  "content": "別集類三{{宋}}提要"
+                },
+                {
+                  "uuid": "7a4248cf-21dd-4afe-afec-33f420a7e818",
+                  "name": "Ring of Bright Water",
+                  "content": "別集類三{{宋}}提要"
+                },
+                {
+                  "uuid": "e1a5ab34-feb4-47d5-9968-812ee58e4042",
+                  "name": "The Torment of Others",
+                  "content": "別集類三{{宋}}提要"
+                },
+                {
+                  "uuid": "6a29d7f1-b39e-4a11-a516-b75f6012a8fd",
+                  "name": "Many Waters",
+                  "content": "別集類三{{宋}}提要"
+                }
+              ]
+            }
+          },
+          "401": {
+            "description": "unauthorised access to this section"
+          },
+          "404": {
+            "description": "section not found"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "apiToken": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "RISE-API-TOKEN"
+    }
+  },
+  "definitions": {
+    "collection": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "resource": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "resource_metadata": {
+      "type": "object",
+      "properties": {
+        "author": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        }
+      }
+    },
+    "section": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "parentUuid": {
+          "type": "string"
+        }
+      }
+    },
+    "content_unit": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

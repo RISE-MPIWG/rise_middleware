@@ -1,0 +1,9 @@
+<svg width="100%" height="100%" viewBox="0 0 400 240">
+    <pattern id="dots" 
+            patternUnits="objectBoundingBox" 
+            patternTransform="rotate(45 5 8)" 
+            width="5%" height="8%">
+        <circle fill="#aaa" cx="10" cy="8" r="4.4" />
+    </pattern>
+    <rect width="400" height="240" fill="url(#dots)" />
+</svg>
